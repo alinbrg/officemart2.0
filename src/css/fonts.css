@@ -1,0 +1,19 @@
+@font-face {
+	font-family: "Helvetica Neue LT";
+	src: url("../fonts/HelveticaNeueLTStd-Lt.woff2") format("woff2"),
+		url("../fonts/HelveticaNeueLTStd-Lt.woff") format("woff"),
+		url("../fonts/HelveticaNeueLTStd-Lt.ttf") format("truetype");
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "Helvetica Neue LT GEO";
+	src: url("../fonts/HelveticaNeueLTGEO-55Roman.woff2") format("woff2"),
+		url("../fonts/HelveticaNeueLTGEO-55Roman.woff") format("woff"),
+		url("../fonts/HelveticaNeueLTGEO-55Roman.ttf") format("truetype");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
