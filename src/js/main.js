@@ -106,3 +106,13 @@ mainPageSlider(".blog-swiper", ".blog", {
 		spaceBetween: 20,
 	},
 });
+mainPageSlider(".logos-swiper", ".logos", {
+	0: {
+		slidesPerView: 2.7,
+		spaceBetween: 20,
+	},
+	1024: {
+		slidesPerView: 6,
+		spaceBetween: 20,
+	},
+});
