@@ -1216,3 +1216,78 @@ header {
 		padding: 24px 0;
 	}
 }
+
+/* leave message */
+.leave-message-wrapper {
+	background-color: var(--primary);
+	padding: 28px;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 72px;
+}
+
+.leave-message-wrapper h3 {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 128%;
+	font-feature-settings: "case" on;
+	color: #ffffff;
+	margin-right: 85px;
+	flex-shrink: 0;
+}
+.leave-message-wrapper form {
+	width: 100%;
+	position: relative;
+}
+.leave-message-wrapper input {
+	background: #ffffff;
+	border-radius: 150px;
+	outline: none;
+	border: none;
+	padding: 14px 24px;
+	width: 100%;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 140%;
+	color: #808080;
+}
+
+.leave-message-wrapper input::placeholder {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 140%;
+	color: #808080;
+}
+
+.leave-message-wrapper button {
+	position: absolute;
+	top: 50%;
+	right: 13px;
+	transform: translateY(-50%);
+	z-index: 1;
+	background-color: transparent;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (max-width: 1024px) {
+	.leave-message-wrapper {
+		flex-direction: column;
+		padding: 20px;
+		align-items: start;
+		margin-bottom: 48px;
+	}
+	.leave-message-wrapper h3 {
+		margin-right: 0;
+		margin-bottom: 24px;
+		font-size: 20px;
+		line-height: 128%;
+	}
+}
