@@ -70,14 +70,18 @@ const mainPageSliderBreakpoints = {
 	},
 };
 
-function mainPageProdSlider(swiper, button) {
+function mainPageSlider(
+	swiper,
+	button,
+	breakpoints = mainPageSliderBreakpoints
+) {
 	if (document.querySelector(swiper)) {
 		const newProd = new Swiper(swiper, {
 			navigation: {
 				nextEl: `${button} .swiper-button-next`,
 				prevEl: `${button} .swiper-button-prev`,
 			},
-			breakpoints: mainPageSliderBreakpoints,
+			breakpoints: breakpoints,
 		});
 	}
 }
@@ -86,9 +90,19 @@ coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();
 
-mainPageProdSlider(".new-prod-swiper", ".new-prod-slider ");
-mainPageProdSlider(".sale-prod-swiper", ".sale-prod-slider");
-mainPageProdSlider(".wholesale-prod-swiper", ".wholesale-prod-slider");
-mainPageProdSlider(".carousel-1-prod-swiper", ".carousel-1");
-mainPageProdSlider(".carousel-2-prod-swiper", ".carousel-2");
-mainPageProdSlider(".carousel-3-prod-swiper", ".carousel-3");
+mainPageSlider(".new-prod-swiper", ".new-prod-slider");
+mainPageSlider(".sale-prod-swiper", ".sale-prod-slider");
+mainPageSlider(".wholesale-prod-swiper", ".wholesale-prod-slider");
+mainPageSlider(".carousel-1-prod-swiper", ".carousel-1");
+mainPageSlider(".carousel-2-prod-swiper", ".carousel-2");
+mainPageSlider(".carousel-3-prod-swiper", ".carousel-3");
+mainPageSlider(".blog-swiper", ".blog", {
+	0: {
+		slidesPerView: 1.1,
+		spaceBetween: 10,
+	},
+	1024: {
+		slidesPerView: 3,
+		spaceBetween: 20,
+	},
+});
