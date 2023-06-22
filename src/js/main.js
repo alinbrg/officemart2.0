@@ -86,6 +86,31 @@ function mainPageSlider(
 	}
 }
 
+function mainPageReviewSlider() {
+	if (document.querySelector(".review-wrapper")) {
+		const newProd = new Swiper(".review-swiper", {
+			navigation: {
+				nextEl: `.review-wrapper .swiper-button-next`,
+				prevEl: `.review-wrapper .swiper-button-prev`,
+			},
+			breakpoints: {
+				0: {
+					slidesPerView: 1.4,
+					spaceBetween: 20,
+					direction: "vertical",
+					loop: true,
+				},
+				1024: {
+					direction: "horizontal",
+					slidesPerView: 3,
+					spaceBetween: 20,
+					loop: false,
+				},
+			},
+		});
+	}
+}
+
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();
@@ -116,3 +141,5 @@ mainPageSlider(".logos-swiper", ".logos", {
 		spaceBetween: 20,
 	},
 });
+
+mainPageReviewSlider();
