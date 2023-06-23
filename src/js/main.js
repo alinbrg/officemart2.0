@@ -111,6 +111,16 @@ function mainPageReviewSlider() {
 	}
 }
 
+function changeOrderOnAboutPage() {
+	if (document.querySelector(".about-us-wrapper")) {
+		const aboutWrapper = document.querySelector(".about-us-wrapper");
+		const linkMap = document.querySelector(".link-map-wrapper");
+		if (window.innerWidth <= 1024) {
+			aboutWrapper.append(linkMap);
+		}
+	}
+}
+
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();
@@ -143,3 +153,4 @@ mainPageSlider(".logos-swiper", ".logos", {
 });
 
 mainPageReviewSlider();
+changeOrderOnAboutPage();
