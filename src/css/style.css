@@ -1699,3 +1699,63 @@ header {
 		margin-bottom: 40px;
 	}
 }
+
+/* brands page */
+.brands-wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(194px, 1fr));
+	gap: 20px;
+}
+.brands-page .page-title {
+	color: var(--text);
+	text-align: center;
+	font-size: 36px;
+	margin-bottom: 8px;
+	font-weight: 750;
+	line-height: 128%;
+	font-feature-settings: "case" on;
+}
+.brands-page {
+	margin-bottom: 104px;
+}
+.brands-page .page-desc {
+	color: #000;
+	text-align: center;
+	font-size: 14px;
+	line-height: 160%;
+	opacity: 0.6;
+	margin: auto;
+	margin-bottom: 40px;
+	max-width: 283px;
+}
+
+.brand-card {
+	border-radius: 16px;
+	background: #fff;
+	width: 100%;
+	padding: 30px;
+	padding-bottom: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding-top: 24px;
+}
+.brand-card img {
+	max-width: 100%;
+	object-fit: contain;
+	max-height: 65px;
+	margin-bottom: 13px;
+}
+.brand-card .brand-name {
+	color: var(--text);
+	text-align: center;
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 160%;
+}
+
+.brands-list button.link {
+	margin: auto;
+	margin-top: 32px;
+}
