@@ -1809,6 +1809,14 @@ header {
 	line-height: 128%;
 	color: var(--text);
 }
+.prod-page-title .flag {
+	padding: 5px 7px;
+	min-height: 27px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 34px;
+}
 .prod-page-filter {
 }
 .prod-list {
