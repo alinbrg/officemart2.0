@@ -23,6 +23,10 @@ function catSwiperSlider() {
 					slidesPerView: 2.2,
 					spaceBetween: 8,
 				},
+				768: {
+					slidesPerView: 3,
+					spaceBetween: 10,
+				},
 				1024: {
 					slidesPerView: 4,
 					spaceBetween: 10,
@@ -154,3 +158,7 @@ mainPageSlider(".logos-swiper", ".logos", {
 
 mainPageReviewSlider();
 changeOrderOnAboutPage();
+
+$(document).ready(function () {
+	$("select").niceSelect();
+});
