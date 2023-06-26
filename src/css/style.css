@@ -1861,6 +1861,45 @@ header {
 .pgn.prev img {
 	transform: rotate(90deg);
 }
+.prod-page-filter {
+	max-width: 390px;
+	margin: auto;
+}
+.nice-select {
+	float: unset;
+}
+.prod-page-filter .row {
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 1px 4px 0px rgba(181, 181, 181, 0.25);
+}
+.prod-page-filter input {
+	padding: 15px 12px;
+	border: none;
+	outline: none;
+}
+.prod-page-filter input,
+.prod-page-filter input::placeholder {
+	color: #000;
+	font-size: 13px;
+	font-family: "Helvetica Neue LT GEO";
+	line-height: 140%;
+}
+.prod-page-filter input:first-child {
+	border-right: 1px solid #eee;
+}
+.prod-page-filter .nice-select {
+	height: 48px;
+	align-items: center;
+	display: flex;
+	border: none;
+}
+.prod-page-filter .inputs {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	margin-bottom: 8px;
+	overflow: hidden;
+}
 @media (max-width: 1024px) {
 	.prod-page-title h2 {
 		font-size: 24px;
