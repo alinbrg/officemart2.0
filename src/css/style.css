@@ -948,6 +948,7 @@ header {
 	line-height: 14px;
 	color: #ffffff;
 	height: fit-content;
+	display: inline-block;
 }
 .sale {
 	background: var(--red);
@@ -1817,8 +1818,7 @@ header {
 	justify-content: center;
 	min-width: 34px;
 }
-.prod-page-filter {
-}
+
 .prod-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(237px, 1fr));
@@ -1877,10 +1877,11 @@ header {
 	padding: 15px 12px;
 	border: none;
 	outline: none;
+	width: 100%;
 }
 .prod-page-filter input,
 .prod-page-filter input::placeholder {
-	color: #000;
+	color: rgba(0, 0, 0, 0.5);
 	font-size: 13px;
 	font-family: "Helvetica Neue LT GEO";
 	line-height: 140%;
@@ -1894,11 +1895,27 @@ header {
 	display: flex;
 	border: none;
 }
+.prod-page-filter .nice-select .current {
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 13px;
+	font-family: "Helvetica Neue LT GEO";
+	line-height: 140%;
+}
 .prod-page-filter .inputs {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	margin-bottom: 8px;
 	overflow: hidden;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+	-moz-appearance: textfield;
 }
 @media (max-width: 1024px) {
 	.prod-page-title h2 {
@@ -1910,5 +1927,126 @@ header {
 	}
 	.pgn-wrapper {
 		margin-bottom: 70px;
+	}
+}
+
+/* category page */
+.cat-page-wrapper {
+	display: grid;
+	grid-template-columns: 255px auto;
+	gap: 17px;
+}
+.category-card {
+	padding: 16px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 1px 3px 0px rgba(184, 184, 184, 0.25);
+	width: 100%;
+	position: relative;
+	margin-bottom: 16px;
+	overflow: hidden;
+}
+.category-card .title {
+	max-width: 70%;
+	color: var(--primary);
+	font-size: 16px;
+	font-feature-settings: "case" on;
+	font-weight: 700;
+	line-height: 140%;
+}
+.category-card .img {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	max-width: 120px;
+	height: 100%;
+	object-fit: cover;
+}
+.cat-tags .flag {
+	background: #e8e8e8;
+	color: #585858;
+	padding: 5px 8px;
+}
+.cat-tags.active .flag {
+	color: #fff;
+}
+.cat-tags.active .flag.sale {
+	background: var(--red);
+}
+.cat-tags.active .flag.new {
+	background: #219653;
+}
+.cat-tags.active .flag.wholesale {
+	background: #2f80ed;
+}
+.cat-page-wrapper .prod-list {
+	margin-top: 0;
+}
+.cat-tags {
+	margin-bottom: 8px;
+}
+.cat-page-wrapper .prod-page-filter {
+	max-width: unset;
+}
+.checkboxes {
+	padding: 19px 12px;
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 1px 4px 0px rgba(181, 181, 181, 0.25);
+	margin-top: 8px;
+}
+.checkbox {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 16px;
+	cursor: pointer;
+}
+.checkbox input {
+	display: none;
+}
+.checkbox input:checked ~ .check {
+	background-color: var(--primary);
+	border-color: var(--primary);
+}
+.checkbox .check {
+	width: 14px;
+	height: 14px;
+	border-radius: 2.5px;
+	border: 1.2px solid #cacaca;
+	position: relative;
+	flex-shrink: 0;
+}
+.checkbox .check::after {
+	content: "";
+	display: none;
+	color: white;
+	font-size: 16px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background-image: url("../img/icons/check.svg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	height: 100%;
+	flex-shrink: 0;
+}
+.checkbox input:checked ~ .check::after {
+	display: block;
+}
+.checkbox span {
+	color: rgba(0, 0, 0, 0.7);
+	font-size: 14px;
+	font-family: "Helvetica Neue LT GEO";
+	line-height: 140%;
+}
+@media (max-width: 1024px) {
+	.cat-page-wrapper {
+		grid-template-columns: 1fr;
+	}
+	.category-card .title {
+		max-width: unset;
 	}
 }
