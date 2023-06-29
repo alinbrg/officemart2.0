@@ -1598,6 +1598,9 @@ header {
 .breadcrumbs a.active {
 	opacity: 1;
 }
+.breadcrumbs a:last-of-type {
+	margin: 0;
+}
 .breadcrumbs a.active::after {
 	display: none;
 }
@@ -1706,6 +1709,10 @@ header {
 	}
 	.breadcrumbs {
 		padding: 16px 0;
+	}
+	.breadcrumbs a {
+		gap: 5px;
+		margin-right: 5px;
 	}
 	.about-us-page .img {
 		height: 381px;
@@ -2218,5 +2225,96 @@ input[type="number"] {
 @media (max-width: 768px) {
 	.blog-posts {
 		grid-template-columns: 1fr;
+	}
+}
+
+/* blog inner page */
+.blog-inner .main-img {
+	margin-bottom: 58px;
+}
+.blog-inner .main-img img {
+	width: 100%;
+	height: 390px;
+	object-fit: cover;
+	border-radius: 12px;
+}
+.blog-inner .wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 164px;
+	gap: 55px;
+}
+.blog-inner .cards {
+	max-width: 409px;
+	flex-shrink: 0;
+}
+.blog-inner .desc {
+	max-width: 644px;
+}
+.blog-inner .desc .title {
+	color: var(--text);
+	font-size: 36px;
+	margin-bottom: 8px;
+	font-style: normal;
+	font-weight: 750;
+	line-height: 128%;
+	font-feature-settings: "case" on;
+}
+.blog-inner .desc .date {
+	color: #000;
+	font-size: 14px;
+	font-family: "Helvetica Neue LT GEO";
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+	display: block;
+	margin-bottom: 24px;
+	opacity: 0.5;
+}
+.blog-inner .desc .text p {
+	color: #000;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+	margin-bottom: 24px;
+}
+.blog-inner .cards .cards-title {
+	color: var(--text);
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 140%;
+	margin-bottom: 26px;
+}
+.blog-inner .blog-card {
+	margin-bottom: 16px;
+}
+.blog-inner .blog-card-text .title {
+	font-size: 16px;
+}
+@media (max-width: 768px) {
+	.blog-inner .wrapper {
+		flex-direction: column;
+		margin-bottom: 72px;
+	}
+	.blog-inner .cards {
+		max-width: unset;
+	}
+	.blog-inner .desc {
+		max-width: unset;
+	}
+	.blog-inner .main-img {
+		margin-bottom: 16px;
+	}
+	.blog-inner .main-img .container {
+		padding: 0;
+	}
+	.blog-inner .main-img img {
+		height: 249px;
+		border-radius: 0;
+	}
+	.blog-inner .desc .title {
+		font-size: 28px;
 	}
 }
