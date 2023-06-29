@@ -125,6 +125,24 @@ function changeOrderOnAboutPage() {
 	}
 }
 
+function blogPageSlider() {
+	if (document.querySelector(".blog-page-wrapper")) {
+		const swiper = new Swiper(".blog-page-wrapper .swiper", {
+			slidesPerView: 1,
+			spaceBetween: 10,
+			pagination: {
+				el: ".blog-page-wrapper .swiper-pagination",
+				type: "bullets",
+				clickable: true,
+			},
+			navigation: {
+				nextEl: ".blog-page-wrapper .swiper-button-next",
+				prevEl: ".blog-page-wrapper .swiper-button-prev",
+			},
+		});
+	}
+}
+
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();
@@ -158,6 +176,7 @@ mainPageSlider(".logos-swiper", ".logos", {
 
 mainPageReviewSlider();
 changeOrderOnAboutPage();
+blogPageSlider();
 
 $(document).ready(function () {
 	$("select").niceSelect();
