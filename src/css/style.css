@@ -1956,6 +1956,7 @@ input[type="number"] {
 	margin-bottom: 16px;
 	overflow: hidden;
 }
+
 .category-card .title {
 	max-width: 70%;
 	color: var(--primary);
@@ -1971,6 +1972,32 @@ input[type="number"] {
 	max-width: 120px;
 	height: 100%;
 	object-fit: cover;
+}
+.category-card.brand {
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 140px;
+}
+.category-card.brand img {
+	position: static;
+	display: block;
+	margin: auto;
+	max-width: 124px;
+	margin-bottom: 27px;
+	object-fit: contain;
+}
+.category-card.brand .title {
+	color: var(--text);
+	text-align: center;
+	font-size: 14px;
+	max-width: unset;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 160%;
+	text-transform: capitalize;
 }
 .cat-tags .flag {
 	background: #e8e8e8;
