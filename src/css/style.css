@@ -1923,6 +1923,7 @@ input::-webkit-inner-spin-button {
 /* Firefox */
 input[type="number"] {
 	-moz-appearance: textfield;
+	appearance: textfield;
 }
 @media (max-width: 1024px) {
 	.prod-page-title h2 {
