@@ -143,6 +143,15 @@ function blogPageSlider() {
 	}
 }
 
+function accordion() {
+	const accodrions = document.querySelectorAll(".accordion .head");
+	accodrions.forEach((el) => {
+		el.addEventListener("click", (e) => {
+			el.closest(".accordion").classList.toggle("active");
+		});
+	});
+}
+
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();
@@ -181,3 +190,4 @@ blogPageSlider();
 $(document).ready(function () {
 	$("select").niceSelect();
 });
+accordion();

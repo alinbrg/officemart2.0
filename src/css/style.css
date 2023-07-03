@@ -2443,3 +2443,129 @@ input[type="number"] {
 		width: 100%;
 	}
 }
+
+/* faq */
+.faq-wrapper {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 140px;
+}
+.faq .title-block {
+	max-width: 400px;
+	width: 100%;
+}
+.faq .title-block .title {
+	color: var(--text);
+	margin-bottom: 8px;
+	font-size: 36px;
+	font-style: normal;
+	font-weight: 750;
+	line-height: 128%;
+	font-feature-settings: "case" on;
+}
+.faq .title-block p {
+	color: rgba(0, 0, 0, 0.5);
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+	margin-bottom: 8px;
+}
+.faq .title-block .write-us {
+	display: flex;
+	align-items: center;
+}
+.faq .title-block .write-us span {
+	color: var(--text);
+	font-size: 14px;
+	font-family: "Helvetica Neue LT GEO";
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+	margin-left: 8px;
+}
+.faq .title-block .write-us a {
+	color: var(--text);
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+	text-decoration-line: underline;
+	margin-left: 4px;
+}
+.faq .questions {
+	max-width: 624px;
+	width: 55%;
+}
+.accordion {
+	padding: 20px 0;
+	border-bottom: 1px solid #e1e1e1;
+}
+.accordion:first-of-type {
+	padding-top: 0;
+}
+.accordion .head {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+}
+.accordion .head img {
+	cursor: pointer;
+	flex-shrink: 0;
+	width: 18px;
+}
+.accordion .head h4 {
+	color: var(--text);
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 140%;
+}
+.accordion.active .body {
+	margin-top: 24px;
+	height: auto;
+}
+.accordion .body {
+	height: 0;
+	overflow: hidden;
+}
+.accordion.active .head img {
+	transform: rotate(180deg);
+}
+.accordion .body > * {
+	color: #000;
+	font-size: 14px;
+	font-family: "Helvetica Neue LT GEO";
+	font-style: normal;
+	font-weight: 400;
+	line-height: 160%;
+}
+@media (max-width: 1024px) {
+	.faq-wrapper {
+		flex-direction: column;
+		margin-bottom: 112px;
+	}
+	.faq .title-block {
+		width: 100%;
+		max-width: unset;
+		padding: 0 12px;
+	}
+	.faq .questions {
+		max-width: unset;
+		width: 100%;
+		margin-top: 56px;
+	}
+	.accordion .head {
+		padding: 0 14px;
+	}
+	.accordion .body {
+		padding: 0 22px;
+	}
+	.accordion {
+		padding: 16px 0;
+	}
+	.faq-container {
+		padding: 0;
+	}
+}
