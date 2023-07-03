@@ -152,6 +152,42 @@ function accordion() {
 	});
 }
 
+function closeModal(modal) {
+	modal.addEventListener("click", (e) => {
+		if (e.target.classList.contains("modal")) modal.classList.remove("active");
+	});
+}
+
+function copyContactData() {
+	const modal = document.querySelector(".copy-modal");
+	const copyContent = document.querySelectorAll(".copy");
+	if (modal) {
+		closeModal(modal);
+		copyContent.forEach((el) => {
+			el.addEventListener("click", () => {
+				let text = el.closest(".row").querySelector("a.link-b").innerText;
+
+				navigator.clipboard
+					.writeText(text)
+					.then(
+						() => {
+							modal.classList.add("active");
+						},
+						() => {
+							console.error("Failed to copy");
+						}
+					)
+					.finally(() => {
+						setTimeout(() => {
+							if (modal.classList.contains("active"))
+								modal.classList.remove("active");
+						}, 1000);
+					});
+			});
+		});
+	}
+}
+
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();
@@ -191,3 +227,4 @@ $(document).ready(function () {
 	$("select").niceSelect();
 });
 accordion();
+copyContactData();
