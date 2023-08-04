@@ -1614,9 +1614,24 @@ header {
 	object-fit: cover;
 	border-radius: 16px;
 }
+.about-us-page .contact-page .links{
+	width: 100%;
+	max-width: unset;
+	margin-bottom: 64px;
+	margin-top: 32px;
+}
+.about-us-page .contact-page .links .img{
+	margin-bottom: 0;
+}
+
+.about-us-page .contact-page .links .img img{
+	width: unset;
+	height: unset;
+	border-radius: 0;
+}
 .about-us-wrapper {
 	display: grid;
-	grid-template-columns: 46% 38%;
+	grid-template-columns: 46% 46%;
 	justify-content: space-between;
 	margin-bottom: 160px;
 }
@@ -1634,6 +1649,12 @@ header {
 	font-family: "Helvetica Neue LT GEO";
 	line-height: 160%;
 }
+.about-text .text img{
+	width: 100%;
+	margin-bottom: 24px;
+	border-radius: 12px;
+	max-height: 221px;
+}
 .about-text .text {
 	margin-bottom: 80px;
 }
@@ -1647,7 +1668,7 @@ header {
 	flex-direction: column;
 	margin-bottom: 80px;
 }
-.about-us-wrapper .links a {
+.about-us-wrapper .links-to a {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
@@ -1656,7 +1677,7 @@ header {
 	font-size: 15px;
 	font-weight: 700;
 }
-.about-us-wrapper .links a:last-child {
+.about-us-wrapper .links-to a:last-child {
 	border: none;
 }
 
@@ -1733,9 +1754,9 @@ header {
 		margin-top: 30px;
 	}
 	.link-map-wrapper {
-		display: flex;
-		flex-direction: column-reverse;
+		margin-bottom: 100px;
 	}
+
 	.tags .tags-desc {
 		margin-bottom: 40px;
 	}
