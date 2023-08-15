@@ -188,6 +188,42 @@ function copyContactData() {
 	}
 }
 
+function openSignModals() {
+	const signInBtn = document.querySelector(".sign-in");
+	const signModal = document.querySelector(".sign");
+	const closeModal = document.querySelector(".sign .close-modal ");
+	signInBtn.addEventListener("click", (e) => {
+		e.preventDefault();
+		signModal.classList.add("active");
+	});
+	closeModal.addEventListener("click", (e) => {
+		signModal.classList.remove("active");
+	});
+}
+
+function signTabsChange() {
+	const tabNames = document.querySelectorAll(".sign .tab-names a");
+	const tabs = document.querySelectorAll(".tab");
+	tabNames.forEach((name) => {
+		name.addEventListener("click", (e) => {
+			e.preventDefault();
+			console.log(name.dataset.tabName);
+			tabs.forEach((el) => el.classList.remove("active"));
+			tabNames.forEach((el) => el.classList.remove("active"));
+
+			name.classList.add("active");
+			console.log(
+				document.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
+			);
+			document
+				.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
+				.classList.add("active");
+		});
+	});
+}
+
+openSignModals();
+signTabsChange();
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();

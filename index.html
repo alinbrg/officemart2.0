@@ -2120,6 +2120,55 @@
 			</div>
 		</footer>
 
+		<section class="sign modal">
+			<div class="modal-content">
+				<div class="close-modal">
+					<img src="src/img/icons/x.svg" alt="close modal" />
+				</div>
+				<div class="tab-names">
+					<a href="#" class="active" data-tab-name="sign-in">ავტორიზაცია</a>
+					<a href="#" class="" data-tab-name="sign-up">რეგისტრაცია</a>
+				</div>
+				<div class="tabs">
+					<div class="tab active" data-tab="sign-in">
+						<form action="">
+							<div class="form-row">
+								<label for="sign-in-email">ელ. ფოსტა</label>
+								<input
+									type="email"
+									id="sign-in-email"
+									name="sign-in-email"
+									placeholder="შეიყვანეთ ელ. ფოსტა"
+								/>
+							</div>
+							<div class="form-row password">
+								<label for="sign-in-password">პაროლი</label>
+								<input
+									type="password"
+									id="sign-in-password"
+									name="sign-in-password"
+									placeholder="******"
+								/>
+								<img src="src/img/icons/eye.svg" alt="" />
+							</div>
+							<a href="#" class="forgot">დაგავიწყდა პაროლი?</a>
+							<button class="form-btn">ავტორიზაცია</button>
+						</form>
+						<span class="line">ან</span>
+						<div class="sign-in-option">
+							<img src="src/img/google.png" alt="" />
+							Google-ით შესვლა
+						</div>
+						<div class="sign-in-option">
+							<img src="src/img/facebook.png" alt="" />
+							Facebook-ით შესვლა
+						</div>
+					</div>
+					<div class="tab" data-tab="sign-up"></div>
+				</div>
+			</div>
+		</section>
+
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
 			integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
