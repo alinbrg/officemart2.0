@@ -192,29 +192,122 @@ function openSignModals() {
 	const signInBtn = document.querySelector(".sign-in");
 	const signModal = document.querySelector(".sign");
 	const closeModal = document.querySelector(".sign .close-modal ");
-	signInBtn.addEventListener("click", (e) => {
-		e.preventDefault();
-		signModal.classList.add("active");
-	});
-	closeModal.addEventListener("click", (e) => {
-		signModal.classList.remove("active");
-	});
+	if (signModal) {
+		signInBtn.addEventListener("click", (e) => {
+			e.preventDefault();
+			signModal.classList.add("active");
+		});
+		closeModal.addEventListener("click", (e) => {
+			signModal.classList.remove("active");
+		});
+		signModal.addEventListener("click", (e) => {
+			if (
+				signModal.classList.contains("active") &&
+				e.target.classList.contains("sign")
+			) {
+				signModal.classList.remove("active");
+			}
+		});
+	}
 }
 
+function selectSignUpRole() {
+	const form = document.querySelector("#select-sign-up-role");
+	const selectRoleBlock = document.querySelector(".select-role-block");
+	const tabNames = document.querySelector(".sign .tab-names");
+	const firstStep = document.querySelector(".step");
+	const firstDivider = document.querySelector(".divider");
+
+	if (form) {
+		form.addEventListener("submit", (e) => {
+			e.preventDefault();
+			const role = form.querySelector('[name="sign-up-role"]:checked')?.value;
+			if (role) {
+				const selectedSignUpForm = document.querySelector(
+					`[data-id="${role}"]`
+				);
+				selectRoleBlock.classList.add("hidden");
+				tabNames.classList.add("hidden");
+				selectedSignUpForm.classList.replace("hidden", "visible");
+				firstStep.classList.add("active");
+				firstDivider.classList.add("active");
+			}
+		});
+	}
+}
+
+function signUpFormActions() {
+	const forms = document.querySelectorAll('[data-class="sign-up-form"]');
+	const steps = document.querySelectorAll(".step");
+	const dividers = document.querySelectorAll(".divider");
+	const tabNames = document.querySelector(".sign .tab-names");
+	forms.forEach((form) => {
+		const formBtn = form.querySelector(".form-btn.active");
+		const formBtnHidden = form.querySelector(".form-btn.hidden");
+		const formTabs = form.querySelectorAll(".form-tab");
+		const showSignInForm = form.querySelector(".show-sign-in-form");
+
+		formBtn.addEventListener("click", (e) => {
+			const activeFormTab = form.querySelector(".form-tab.active");
+			const errors = [];
+			const inputs = activeFormTab.querySelectorAll("input[required]");
+
+			inputs.forEach((el) => {
+				if (!el.validity.valid) {
+					el.classList.add("err");
+					errors.push(el.validity.valid);
+				} else {
+					el.classList.remove("err");
+				}
+			});
+
+			if (!errors.includes(false)) {
+				if (+activeFormTab.dataset.id !== 3) {
+					activeFormTab.classList.replace("active", "hidden");
+					formTabs[activeFormTab.dataset.id]?.classList.add("active");
+					steps[activeFormTab.dataset.id]?.classList.add("active");
+					dividers[activeFormTab.dataset.id]?.classList.add("active");
+					dividers[activeFormTab.dataset.id - 1]?.classList.add("full");
+				}
+
+				if (+activeFormTab.dataset.id + 1 === 3) {
+					formBtn.classList.replace("active", "hidden");
+					formBtnHidden.classList.replace("hidden", "active");
+				}
+			}
+		});
+
+		form?.addEventListener("submit", (e) => {
+			e.preventDefault();
+			formBtnHidden.classList.replace("active", "hidden");
+
+			// add ajax and if success
+			if (true) {
+				formTabs[2]?.classList.replace("active", "hidden");
+				formTabs[3]?.classList.add("active");
+				steps[3]?.classList.add("active");
+				dividers[3]?.classList.add("active");
+				dividers[3 - 1]?.classList.add("full");
+				tabNames.classList.remove("hidden");
+				showSignInForm.classList.replace("hidden", "active");
+			}
+		});
+
+		showSignInForm?.addEventListener("click", (e) => {
+			document.querySelector('[data-tab-name="sign-in"]')?.click();
+		});
+	});
+}
 function signTabsChange() {
 	const tabNames = document.querySelectorAll(".sign .tab-names a");
 	const tabs = document.querySelectorAll(".tab");
 	tabNames.forEach((name) => {
 		name.addEventListener("click", (e) => {
 			e.preventDefault();
-			console.log(name.dataset.tabName);
 			tabs.forEach((el) => el.classList.remove("active"));
 			tabNames.forEach((el) => el.classList.remove("active"));
 
 			name.classList.add("active");
-			console.log(
-				document.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
-			);
 			document
 				.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
 				.classList.add("active");
@@ -264,3 +357,5 @@ $(document).ready(function () {
 });
 accordion();
 copyContactData();
+selectSignUpRole();
+signUpFormActions();
