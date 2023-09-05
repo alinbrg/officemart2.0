@@ -188,27 +188,65 @@ function copyContactData() {
 	}
 }
 
+function closeSignModals() {
+	const closeModalBtns = document.querySelectorAll(
+		".sign-modal-block .close-modal "
+	);
+	const modals = document.querySelectorAll(".sign-modal-block");
+	closeModalBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			btn.closest(".sign-modal-block ").classList.remove("active");
+		});
+	});
+	modals.forEach((modal) => {
+		modal.addEventListener("click", (e) => {
+			if (
+				modal.classList.contains("active") &&
+				e.target.classList.contains("sign-modal-block")
+			) {
+				modal.classList.remove("active");
+			}
+		});
+	});
+}
+
 function openSignModals() {
 	const signInBtn = document.querySelector(".sign-in");
 	const signModal = document.querySelector(".sign");
-	const closeModal = document.querySelector(".sign .close-modal ");
+	const openForgotModal = document.querySelector("#open-forgot-modal");
+	const forgotModal = document.querySelector(".forgot-password");
+	const backToSign = document.querySelector(".forgot-password .back-to-sign");
+	const openSignModalAfterPasswordChange = document.querySelector(
+		".success-message-after-password-change  .show-sign-in-form"
+	);
+	const successModal = document.querySelector(
+		".success-message-after-password-change"
+	);
 	if (signModal) {
 		signInBtn.addEventListener("click", (e) => {
 			e.preventDefault();
 			signModal.classList.add("active");
 		});
-		closeModal.addEventListener("click", (e) => {
+	}
+	if (openForgotModal) {
+		openForgotModal.addEventListener("click", (e) => {
+			e.preventDefault();
 			signModal.classList.remove("active");
-		});
-		signModal.addEventListener("click", (e) => {
-			if (
-				signModal.classList.contains("active") &&
-				e.target.classList.contains("sign")
-			) {
-				signModal.classList.remove("active");
-			}
+			forgotModal.classList.add("active");
 		});
 	}
+	if (openSignModalAfterPasswordChange) {
+		openSignModalAfterPasswordChange.addEventListener("click", (e) => {
+			successModal.classList.remove("active");
+			signModal.classList.add("active");
+		});
+	}
+	// if (backToSign) {
+	// 	backToSign.addEventListener("click", (e) => {
+	// 		forgotModal.classList.remove("active");
+	// 		signModal.classList.add("active");
+	// 	});
+	// }
 }
 
 function selectSignUpRole() {
@@ -227,7 +265,7 @@ function selectSignUpRole() {
 					`[data-id="${role}"]`
 				);
 				selectRoleBlock.classList.add("hidden");
-				tabNames.classList.add("hidden");
+				// tabNames.classList.add("hidden");
 				selectedSignUpForm.classList.replace("hidden", "visible");
 				firstStep.classList.add("active");
 				firstDivider.classList.add("active");
@@ -288,7 +326,7 @@ function signUpFormActions() {
 				steps[3]?.classList.add("active");
 				dividers[3]?.classList.add("active");
 				dividers[3 - 1]?.classList.add("full");
-				tabNames.classList.remove("hidden");
+				// tabNames.classList.remove("hidden");
 				showSignInForm.classList.replace("hidden", "active");
 			}
 		});
@@ -311,6 +349,20 @@ function signTabsChange() {
 			document
 				.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
 				.classList.add("active");
+		});
+	});
+}
+
+function showPassword() {
+	const showPasswordBtns = document.querySelectorAll(".form-row.password img");
+	showPasswordBtns.forEach((btn) => {
+		let typePassword = true;
+		btn.addEventListener("click", (e) => {
+			const input = btn.closest(".form-row.password")?.querySelector("input");
+			typePassword = !typePassword;
+			typePassword === false
+				? (input.type = "text")
+				: (input.type = "password");
 		});
 	});
 }
@@ -359,3 +411,5 @@ accordion();
 copyContactData();
 selectSignUpRole();
 signUpFormActions();
+showPassword();
+closeSignModals();
