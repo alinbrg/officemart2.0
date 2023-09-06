@@ -367,6 +367,46 @@ function showPassword() {
 	});
 }
 
+function productPageSwiper() {
+	const swiper = new Swiper(".product-page .thumbs", {
+		spaceBetween: 8,
+		slidesPerView: 4,
+		freeMode: true,
+		watchSlidesProgress: true,
+		navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 0,
+				spaceBetween: 0,
+			},
+			1024: {
+				slidesPerView: 4,
+				spaceBetween: 8,
+			},
+		},
+	});
+	const swiper2 = new Swiper(".product-page .product-page-swiper", {
+		spaceBetween: 0,
+		slidesPerView: 1,
+		thumbs: {
+			swiper: swiper,
+		},
+		breakpoints: {
+			0: {
+				slidesPerView: 1.2,
+				spaceBetween: 8,
+			},
+			1024: {
+				slidesPerView: 1,
+				spaceBetween: 10,
+			},
+		},
+	});
+}
+
 openSignModals();
 signTabsChange();
 coffeeSwiperSlider();
@@ -413,3 +453,4 @@ selectSignUpRole();
 signUpFormActions();
 showPassword();
 closeSignModals();
+productPageSwiper();
