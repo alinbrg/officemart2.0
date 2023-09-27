@@ -407,6 +407,64 @@ function productPageSwiper() {
 	});
 }
 
+function profilePageActions() {
+	const tabBtns = document.querySelectorAll(".profile-tab-name");
+	const tabs = document.querySelectorAll(".profile-tab");
+
+	const profilePage = document.querySelector(".profile");
+
+	if (profilePage) {
+		const tabNames = [
+			"favourite-products",
+			"cart",
+			"history",
+			"addresses",
+			"my-info",
+			"security",
+		];
+
+		const pageUrl = window.location.href;
+		const url = window.location.href.split("#")[0];
+		const activeTab = window.location.href.split("#")[1];
+
+		if (activeTab && tabNames.includes(activeTab)) {
+			const selectedTabs = document.querySelectorAll(
+				`[data-tab-name="${activeTab}"]`
+			);
+			selectedTabs.forEach((tab) => tab.classList.add("active"));
+		} else {
+			tabBtns[0]?.classList.add("active");
+			tabs[0]?.classList.add("active");
+			window.location.href = url + "#" + tabNames[0];
+		}
+
+		tabBtns.forEach((btn, index) => {
+			btn.addEventListener("click", (e) => {
+				removeActiveClasses();
+				btn.classList.add("active");
+				tabs[index]?.classList.add("active");
+
+				tabNames[index] && (window.location.href = url + "#" + tabNames[index]);
+			});
+		});
+
+		function removeActiveClasses() {
+			[...tabBtns, ...tabs].forEach((btn) => {
+				btn.classList.remove("active");
+			});
+		}
+
+		// orders
+
+		const seeOrderInfo = document.querySelectorAll(".see-order-info");
+		seeOrderInfo.forEach((btn) => {
+			btn.addEventListener("click", (e) => {
+				btn.closest(".order-card").classList.toggle("active");
+			});
+		});
+	}
+}
+
 openSignModals();
 signTabsChange();
 coffeeSwiperSlider();
@@ -454,3 +512,4 @@ signUpFormActions();
 showPassword();
 closeSignModals();
 productPageSwiper();
+profilePageActions();
