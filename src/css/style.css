@@ -4031,10 +4031,6 @@ input[type="number"] {
 	opacity: 1;
 	height: auto;
 	visibility: visible;
-	padding: 16px;
-	border-radius: 8px;
-	background: #fdfdfd;
-	padding-bottom: 24px;
 }
 
 .orders-wrapper:has(.order-card.active) .order-card:not(.active) {
@@ -4055,14 +4051,30 @@ input[type="number"] {
 .order-card.active .see-order-info img {
 	opacity: 1;
 }
+.order-title.mobile {
+	display: none;
+}
 .order-card.active .order-title {
+	display: none;
+}
+.order-item {
+	padding: 16px;
+	background: #fdfdfd;
+	padding-bottom: 24px;
+	margin-bottom: 8px;
+	border-radius: 8px;
+	background: #fdfdfd;
+}
+
+.order-card.active .order-title.mobile {
+	display: grid;
 	grid-template-columns: 0.3fr 1fr 1fr 6fr;
 	background-color: transparent;
 	margin-bottom: 16px;
 	padding: 0;
 }
 
-.order-card.active .order-title h4 {
+.order-card.active .order-title.mobile h4 {
 	font-size: 18px;
 	font-weight: 700;
 }
@@ -4215,6 +4227,7 @@ input[type="number"] {
 	}
 	.order-item .comment {
 		grid-template-columns: 1fr;
+		grid-template-areas: "content";
 	}
 	.order-title {
 		grid-template-columns: 1fr 1fr 1.2fr;
@@ -4232,10 +4245,14 @@ input[type="number"] {
 		grid-row: unset;
 		grid-column: unset;
 	}
-	.order-card.active .order-title {
+	.order-card.active .order-title.mobile {
 		grid-template-columns: 40px min-content min-content;
 	}
-	.order-card.active .order-title h4.add {
+	.order-card.active .order-title.mobile h4.add {
 		grid-column: 2/-1;
+	}
+	.order-card.active .order-title h4:nth-child(2) {
+		border-left: none;
+		padding-left: 0;
 	}
 }
