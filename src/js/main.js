@@ -414,7 +414,7 @@ function profilePageActions() {
 	const profilePage = document.querySelector(".profile");
 
 	if (profilePage) {
-		const tabNames = [
+		const perosnalTabNames = [
 			"favourite-products",
 			"cart",
 			"history",
@@ -427,7 +427,7 @@ function profilePageActions() {
 		const url = window.location.href.split("#")[0];
 		const activeTab = window.location.href.split("#")[1];
 
-		if (activeTab && tabNames.includes(activeTab)) {
+		if (activeTab && perosnalTabNames.includes(activeTab)) {
 			const selectedTabs = document.querySelectorAll(
 				`[data-tab-name="${activeTab}"]`
 			);
@@ -435,7 +435,7 @@ function profilePageActions() {
 		} else {
 			tabBtns[0]?.classList.add("active");
 			tabs[0]?.classList.add("active");
-			window.location.href = url + "#" + tabNames[0];
+			window.location.href = url + "#" + perosnalTabNames[0];
 		}
 
 		tabBtns.forEach((btn, index) => {
@@ -444,7 +444,8 @@ function profilePageActions() {
 				btn.classList.add("active");
 				tabs[index]?.classList.add("active");
 
-				tabNames[index] && (window.location.href = url + "#" + tabNames[index]);
+				perosnalTabNames[index] &&
+					(window.location.href = url + "#" + perosnalTabNames[index]);
 			});
 		});
 
@@ -461,6 +462,55 @@ function profilePageActions() {
 			btn.addEventListener("click", (e) => {
 				btn.closest(".order-card").classList.toggle("active");
 			});
+		});
+
+		// my info tab
+
+		const editBtn = document.querySelector(".edit-btn");
+		const saveBtn = document.querySelector(".save-btn");
+		const x = document.querySelector(".x");
+		editBtn.addEventListener("click", (e) => {
+			editBtn
+				.closest("form")
+				.querySelectorAll("input")
+				.forEach((el) => {
+					el.removeAttribute("readonly");
+				});
+
+			editBtn.classList.add("hidden");
+			x.classList.remove("hidden");
+			saveBtn.classList.remove("hidden");
+		});
+
+		x.addEventListener("click", () => {
+			x.closest("form")
+				.querySelectorAll("input")
+				.forEach((el) => {
+					el.setAttribute("readonly", true);
+				});
+
+			x.classList.add("hidden");
+			editBtn.classList.remove("hidden");
+			saveBtn.classList.add("hidden");
+		});
+
+		// edit password
+		const editPassword = document.querySelector(".edit-password");
+		const passwordModal = document.querySelector(".password-modal");
+		const nextPass = document.querySelector(".password-modal .form-btn.next");
+		const newPassBlock = document.querySelector(".new-password-block");
+		const oldPassBlock = document.querySelector(".old-password-block");
+		const passwordTabNames = document.querySelectorAll(
+			".password-modal .tab-names a"
+		);
+		editPassword.addEventListener("click", () => {
+			passwordModal.classList.add("active");
+		});
+
+		nextPass.addEventListener("click", () => {
+			oldPassBlock.classList.add("hidden");
+			newPassBlock.classList.remove("hidden");
+			passwordTabNames.forEach((el) => el.classList.toggle("hidden"));
 		});
 	}
 }

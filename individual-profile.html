@@ -496,10 +496,158 @@
 							<div class="tab-title">
 								<h3>ჩემი ანგარიში</h3>
 							</div>
+							<div class="my-info-block profile-form">
+								<form action="">
+									<div class="btns">
+										<button class="edit-btn" type="button">
+											<img src="src/img/icons/edit-3 1.svg" alt="" />რედაქტირება
+										</button>
+										<button class="save-btn hidden" type="submit">
+											შენახვა
+											<img src="src/img/icons/save.svg" alt="" />
+										</button>
+										<button class="x hidden" type="button">
+											<img src="src/img/icons/x.svg" alt="" />
+										</button>
+									</div>
+									<div class="form-row">
+										<label for="name">სახელი</label>
+										<input type="text" value="დავითი" readonly id="name" />
+									</div>
+									<div class="form-row">
+										<label for="lastname">გვარი</label>
+										<input
+											type="text"
+											value="კოხრეიძე"
+											readonly
+											id="lastname"
+										/>
+									</div>
+									<div class="form-row">
+										<label for="email">ელ.ფოსტა</label>
+										<input
+											type="email"
+											value="dato.kokhreidze25@gmail.com"
+											readonly
+											id="email"
+										/>
+									</div>
+									<div class="form-row">
+										<label for="personal-number">პირადი ნომერი</label>
+										<input
+											type="number"
+											value="01005034170"
+											readonly
+											id="personal-number"
+										/>
+									</div>
+									<div class="form-row">
+										<label for="phone">ტელეფონის ნომერი</label>
+										<input
+											type="tel"
+											value="+995 543 213 456"
+											readonly
+											id="phone"
+										/>
+									</div>
+									<div class="form-row">
+										<label for="phone2">ალტერნატიული ნომერი</label>
+										<input
+											type="tel"
+											value="+995 543 213 456"
+											readonly
+											id="phone2"
+										/>
+									</div>
+								</form>
+							</div>
 						</div>
 						<div class="profile-tab" data-tab-name="security">
 							<div class="tab-title">
-								<h3>უსაბრთხოება</h3>
+								<h3>უსაფრთხოება</h3>
+							</div>
+							<div class="profile-form">
+								<form class="security-wrapper">
+									<div class="form-row">
+										<label for="pass">პაროლი</label>
+										<input
+											type="password"
+											readonly
+											placeholder="*******"
+											id="pass"
+										/>
+									</div>
+									<button class="edit-btn edit-password" type="button">
+										<img src="src/img/icons/edit-3 1.svg" alt="" />პაროლის
+										შეცვლა
+									</button>
+								</form>
+							</div>
+
+							<div class="password-modal sign modal sign-modal-block">
+								<div class="modal-content">
+									<div class="close-modal">
+										<img src="src/img/icons/x.svg" alt="close modal" />
+									</div>
+									<div class="tab-names">
+										<a href="#" class="">პაროლის შეცვლა</a>
+										<a href="#" class="hidden">ახალი პაროლი</a>
+									</div>
+									<form action="">
+										<div class="old-password-block">
+											<div class="form-row password">
+												<label for="old-password">პაროლი</label>
+
+												<!-- add class err to input for red border -->
+												<input
+													type="password"
+													id="old-password"
+													name="old-password"
+													placeholder="******"
+													required
+												/>
+												<img src="src/img/icons/eye.svg" alt="" />
+											</div>
+											<a href="#" class="forgot" id="open-forgot-modal"
+												>დაგავიწყდა პაროლი?</a
+											>
+											<button type="button" class="form-btn next">
+												გაგრძელება
+											</button>
+										</div>
+										<div class="new-password-block hidden">
+											<div class="form-row password">
+												<label for="new-password">ახალი პაროლი</label>
+
+												<!-- add class err to input for red border -->
+												<input
+													type="password"
+													id="new-password"
+													name="new-password"
+													placeholder="******"
+													required
+												/>
+												<img src="src/img/icons/eye.svg" alt="" />
+											</div>
+											<div class="form-row password">
+												<label for="new-password-repeat">გაიმეორე პაროლი</label>
+
+												<!-- add class err to input for red border -->
+												<input
+													type="password"
+													id="new-password-repeat"
+													name="new-password-repeat"
+													placeholder="******"
+													required
+												/>
+												<img src="src/img/icons/eye.svg" alt="" />
+											</div>
+											<button type="submit" class="form-btn next">
+												შენახვა
+											</button>
+										</div>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>
