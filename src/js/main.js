@@ -414,7 +414,7 @@ function profilePageActions() {
 	const profilePage = document.querySelector(".profile");
 
 	if (profilePage) {
-		const perosnalTabNames = [
+		const tabNames = [
 			"favourite-products",
 			"cart",
 			"history",
@@ -427,7 +427,7 @@ function profilePageActions() {
 		const url = window.location.href.split("#")[0];
 		const activeTab = window.location.href.split("#")[1];
 
-		if (activeTab && perosnalTabNames.includes(activeTab)) {
+		if (activeTab && tabNames.includes(activeTab)) {
 			const selectedTabs = document.querySelectorAll(
 				`[data-tab-name="${activeTab}"]`
 			);
@@ -435,7 +435,7 @@ function profilePageActions() {
 		} else {
 			tabBtns[0]?.classList.add("active");
 			tabs[0]?.classList.add("active");
-			window.location.href = url + "#" + perosnalTabNames[0];
+			window.location.href = url + "#" + tabNames[0];
 		}
 
 		tabBtns.forEach((btn, index) => {
@@ -444,8 +444,7 @@ function profilePageActions() {
 				btn.classList.add("active");
 				tabs[index]?.classList.add("active");
 
-				perosnalTabNames[index] &&
-					(window.location.href = url + "#" + perosnalTabNames[index]);
+				tabNames[index] && (window.location.href = url + "#" + tabNames[index]);
 			});
 		});
 
@@ -466,20 +465,27 @@ function profilePageActions() {
 
 		// my info tab
 
-		const editBtn = document.querySelector(".edit-btn");
-		const saveBtn = document.querySelector(".save-btn");
+		const editBtn = document.querySelectorAll(".edit-btn");
+		const saveBtn = document.querySelectorAll(".save-btn");
 		const x = document.querySelector(".x");
-		editBtn.addEventListener("click", (e) => {
-			editBtn
-				.closest("form")
-				.querySelectorAll("input")
-				.forEach((el) => {
-					el.removeAttribute("readonly");
-				});
 
-			editBtn.classList.add("hidden");
-			x.classList.remove("hidden");
-			saveBtn.classList.remove("hidden");
+		editBtn.forEach((btn) => {
+			btn.addEventListener("click", (e) => {
+				btn
+					.closest("form")
+					.querySelectorAll("input")
+					.forEach((el, index, arr) => {
+						arr[0].focus();
+						el.removeAttribute("readonly");
+					});
+
+				btn.classList.add("hidden");
+				btn
+					.closest("form")
+					.querySelector(".save-btn")
+					?.classList.remove("hidden");
+				btn.closest("form").querySelector(".x")?.classList.remove("hidden");
+			});
 		});
 
 		x.addEventListener("click", () => {
@@ -512,6 +518,8 @@ function profilePageActions() {
 			newPassBlock.classList.remove("hidden");
 			passwordTabNames.forEach((el) => el.classList.toggle("hidden"));
 		});
+
+		// addresses
 	}
 }
 

@@ -4195,6 +4195,8 @@ input[type="number"] {
 	border: none;
 	color: #404040;
 	padding: 9px 13px;
+	outline: none;
+	caret-color: var(--primary);
 }
 .profile-form input:read-only {
 	background-color: transparent;
@@ -4205,7 +4207,8 @@ input[type="number"] {
 	margin-bottom: 16px;
 	max-width: 300px;
 }
-.edit-btn {
+.edit-btn,
+.edit-btn span {
 	border-radius: 7px;
 	background: #fff;
 	padding: 10px 12px;
@@ -4220,7 +4223,8 @@ input[type="number"] {
 	cursor: pointer;
 }
 
-.my-info-block .save-btn {
+.save-btn,
+.save-btn span {
 	display: flex;
 	border-radius: 40px;
 	background: var(--primary);
@@ -4250,6 +4254,68 @@ input[type="number"] {
 }
 .password-modal .form-btn.next {
 	margin-top: 100px;
+}
+.no-addresses p {
+	color: #000;
+	margin-bottom: 16px;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 128%;
+	opacity: 0.4;
+}
+.no-addresses button {
+	border-radius: 8px;
+	border: 1px dashed #d1d1d1;
+	padding: 17px;
+	width: 100%;
+	gap: 12px;
+	opacity: 0.5;
+	color: #000;
+	font-family: "Helvetica Neue LT GEO";
+	font-size: 14px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 128%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.addresses-wrapper:has(.address-card) .no-addresses p {
+	display: none;
+}
+.address-card form {
+	max-width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 8px;
+	background: #fdfdfd;
+	margin-top: 8px;
+}
+.address-card {
+	margin-bottom: 16px;
+}
+.address-card form .edit-btn,
+.address-card form .edit-btn span,
+.address-card form .save-btn span {
+	padding: 0;
+}
+.address-card form .save-btn,
+.address-card form .edit-btn {
+	padding: 6px 20px;
+}
+
+.address-card form {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.address-card input {
+	background-color: transparent;
+	padding: 0;
+	width: 80%;
+	border-radius: 0;
 }
 @media (max-width: 1200px) {
 	.fav-prod-card {
@@ -4343,12 +4409,15 @@ input[type="number"] {
 		top: -50px;
 	}
 	.edit-btn,
-	.my-info-block .save-btn {
+	.save-btn {
 		padding: 10px 16px;
 	}
 	.security-wrapper .edit-btn {
 		position: absolute;
 		top: -50px;
 		right: 0;
+	}
+	.address-card form button span {
+		display: none;
 	}
 }
