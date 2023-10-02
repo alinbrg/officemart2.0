@@ -4348,7 +4348,7 @@ input[type="number"] {
 	opacity: 0;
 }
 .select2-search--dropdown {
-	margin-top: -30px;
+	margin-top: -10px;
 }
 .select2-container--default .select2-selection--single {
 	border: none;

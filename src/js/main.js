@@ -472,7 +472,7 @@ function profilePageActions() {
 
 		// my info tab
 
-		const editBtn = document.querySelectorAll(".edit-btn");
+		const editBtn = document.querySelectorAll(".edit-btn:not(.edit-password)");
 		const saveBtn = document.querySelectorAll(".save-btn");
 		const x = document.querySelector(".x");
 
@@ -503,8 +503,8 @@ function profilePageActions() {
 				});
 
 			x.classList.add("hidden");
-			editBtn.classList.remove("hidden");
-			saveBtn.classList.add("hidden");
+			editBtn?.classList.remove("hidden");
+			saveBtn?.classList.add("hidden");
 		});
 
 		// edit password
