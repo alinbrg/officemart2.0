@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="src/css/fonts.css" />
 		<link rel="stylesheet" href="src/css/swiper-bundle.min.css" />
 		<link rel="stylesheet" href="src/css/nice-select.css" />
+		<link rel="stylesheet" href="src/css/select2.min.css" />
 		<link rel="stylesheet" href="src/css/style.css" />
 	</head>
 	<body>
@@ -545,6 +546,61 @@
 										<img src="src/img/icons/plus.svg" alt="" />
 										მისამართის დამატება
 									</button>
+								</div>
+
+								<div class="sign modal sign-modal-block add-address-modal">
+									<div class="modal-content">
+										<div class="close-modal">
+											<img src="src/img/icons/x.svg" alt="close modal" />
+										</div>
+
+										<div class="tab-names">
+											<a href="#">მისამართს დამატება</a>
+										</div>
+
+										<form action="" class="add-address-form">
+											<div class="city-block address-modal-blocks">
+												<div class="city-select">
+													<select name="city" id="city">
+														<option value="0" selected disabled>
+															მოძებნე ქალაქი ან რაიონი
+														</option>
+														<option value="1">თბილისი</option>
+														<option value="2">ბათუმი</option>
+														<option value="3">ქუთაისი</option>
+														<option value="4">გორი</option>
+														<option value="1">თბილისი</option>
+														<option value="2">ბათუმი</option>
+														<option value="3">ქუთაისი</option>
+														<option value="4">გორი</option>
+														<option value="1">თბილისი</option>
+														<option value="2">ბათუმი</option>
+														<option value="3">ქუთაისი</option>
+														<option value="4">გორი</option>
+														<option value="1">თბილისი</option>
+														<option value="2">ბათუმი</option>
+														<option value="3">ქუთაისი</option>
+														<option value="4">გორი</option>
+													</select>
+												</div>
+												<button class="form-btn city-select-btn" type="button">
+													დამატება
+												</button>
+											</div>
+
+											<div class="street-block address-modal-blocks hidden">
+												<div class="form-row">
+													<label for="street">ქუჩის დასახელება</label>
+													<input
+														type="text"
+														id="street"
+														placeholder="ჩაწერე ქუჩის დასახელება"
+													/>
+												</div>
+												<button class="form-btn" type="submit">დამატება</button>
+											</div>
+										</form>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -1409,6 +1465,7 @@
 			referrerpolicy="no-referrer"
 		></script>
 		<script src="src/js/jquery.nice-select.min.js"></script>
+		<script src="src/js/select2.min.js"></script>
 		<script src="src/js/swiper-bundle.min.js"></script>
 		<script src="src/js/main.js"></script>
 	</body>

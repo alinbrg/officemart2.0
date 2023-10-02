@@ -196,6 +196,10 @@ function closeSignModals() {
 	closeModalBtns.forEach((btn) => {
 		btn.addEventListener("click", () => {
 			btn.closest(".sign-modal-block ").classList.remove("active");
+
+			if ($("#city").data("select2")) {
+				$("#city").select2("destroy");
+			}
 		});
 	});
 	modals.forEach((modal) => {
@@ -205,6 +209,9 @@ function closeSignModals() {
 				e.target.classList.contains("sign-modal-block")
 			) {
 				modal.classList.remove("active");
+				if ($("#city").data("select2")) {
+					$("#city").select2("destroy");
+				}
 			}
 		});
 	});
@@ -520,6 +527,43 @@ function profilePageActions() {
 		});
 
 		// addresses
+		const addAddressBtn = document.querySelector(".add-address");
+		const addressModal = document.querySelector(".add-address-modal");
+		const cityAddBtn = document.querySelector(".city-select-btn");
+		const selectedCity = document.querySelector("#city");
+		const addressModalBlocks = document.querySelectorAll(
+			".address-modal-blocks"
+		);
+		let select;
+		createCitySelect();
+
+		function createCitySelect() {
+			select = $("#city").select2({
+				closeOnSelect: false,
+			});
+
+			select.on("select2:closing", function (e) {
+				e.preventDefault();
+			});
+		}
+
+		addAddressBtn.addEventListener("click", (e) => {
+			document.querySelector(".city-block").classList.remove("hidden");
+			document.querySelector(".street-block").classList.add("hidden");
+
+			createCitySelect();
+			addressModal.classList.add("active");
+			select.select2("open");
+		});
+
+		cityAddBtn.addEventListener("click", () => {
+			if (selectedCity.value != 0) {
+				if ($("#city").data("select2")) {
+					$("#city").select2("destroy");
+				}
+				addressModalBlocks.forEach((el) => el.classList.toggle("hidden"));
+			}
+		});
 	}
 }
 
@@ -561,7 +605,7 @@ changeOrderOnAboutPage();
 blogPageSlider();
 
 $(document).ready(function () {
-	$("select").niceSelect();
+	$("select:not(#city)").niceSelect();
 });
 accordion();
 copyContactData();
