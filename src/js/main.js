@@ -343,9 +343,12 @@ function signUpFormActions() {
 		});
 	});
 }
-function signTabsChange() {
-	const tabNames = document.querySelectorAll(".sign .tab-names a");
-	const tabs = document.querySelectorAll(".tab");
+
+function tabsChange(parent) {
+	const parentEl = document.querySelector(parent);
+	const tabNames = parentEl.querySelectorAll(".tab-names a");
+	const tabs = parentEl.querySelectorAll(".tab");
+
 	tabNames.forEach((name) => {
 		name.addEventListener("click", (e) => {
 			e.preventDefault();
@@ -568,7 +571,8 @@ function profilePageActions() {
 }
 
 openSignModals();
-signTabsChange();
+tabsChange(".sign");
+tabsChange(".order-page-aside");
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();

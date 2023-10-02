@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>place order</title>
+		<link rel="shortcut icon" href="src/img/icons/icon.svg" type="image/svg" />
+		<link rel="stylesheet" href="src/css/fonts.css" />
+		<link rel="stylesheet" href="src/css/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="src/css/nice-select.css" />
+		<link rel="stylesheet" href="src/css/style.css" />
+	</head>
+	<body>
+		<header>
+			<div class="container">
+				<div class="header-wrapper d-flex">
+					<a href="index.html" class="logo d-flex">
+						<img src="src/img/icons/logo.svg" alt="officemart" />
+					</a>
+					<div class="header-actions d-flex">
+						<form action="#" class="search-form d-flex">
+							<input type="text" placeholder="პროდუქტის ძიება.." />
+							<button class="link link-bg" type="submit">
+								<img src="src/img/icons/search-normal.svg" alt="" />
+							</button>
+						</form>
+						<div class="header-contact-links d-flex">
+							<a class="link" href="tel:0322 04 05 00">
+								<img src="src/img/icons/call-calling.svg" alt="" />
+								0322 04 05 00
+							</a>
+							<a class="link mail-link" href="mailto:someone@yoursite.com">
+								<img src="src/img/icons/sms-tracking.svg" alt="" />
+								info@officemart.ge
+							</a>
+						</div>
+						<a class="link link-bg header-cart" href="#">
+							<img src="src/img/icons/cart-header.svg" alt="" />
+							<div>
+								<span>კალათა</span>
+								<span class="cart-total">1250₾</span>
+							</div>
+						</a>
+						<div class="sign-in-options d-flex">
+							<a class="link link-bg-primary sign-in" href="#"> შესვლა </a>
+							<a class="link sign-in-google" href="#">
+								<img src="src/img/icons/google 1.svg" alt="" />
+							</a>
+						</div>
+						<div class="langbar d-flex">
+							<div class="lang-wrapper">
+								<a href="#" class="active">Geo</a>
+								<a href="#">Eng</a>
+							</div>
+							<img src="src/img/icons/arr.svg" alt="" />
+						</div>
+						<div class="burger">
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="navbar-wrapper">
+				<div class="container">
+					<nav class="navbar">
+						<ul>
+							<li><a href="index.html">მთავარი</a></li>
+							<li><a href="#">მომსახურების პირობები</a></li>
+							<li><a href="sale.html">ფასდაკლებები</a></li>
+							<li><a href="new-products.html">ახალი პროდუქცია</a></li>
+							<li><a href="about-us.html">ჩვენ შესახებ</a></li>
+							<li><a href="faq.html">კითხვები</a></li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<section class="place-order">
+			<div class="container">
+				<div class="breadcrumbs">
+					<a href="index.html">მთავარი</a>
+					<a href="blog.html" class="active">შეკვეთის გაფორმება</a>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="order-page-wrapper">
+					<div class="order-page-aside sign-modal-block">
+						<div class="modal-content">
+							<div class="tab-names">
+								<a href="#" class="active" data-tab-name="individual-order"
+									>ფიზიკური პირი</a
+								>
+								<a href="#" class="" data-tab-name="iuridical-order"
+									>იურიდიული პირი</a
+								>
+							</div>
+
+							<div class="tabs">
+								<div class="tab active" data-tab="individual-order">
+									<form action="">
+										<div class="form-row">
+											<label for="order-name">სახელი</label>
+											<input
+												type="text"
+												placeholder="ჩაწერეთ სახელი"
+												id="order-name"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-lastname">გვარი</label>
+											<input
+												type="text"
+												id="order-lastname"
+												placeholder="ჩაწერეთ გვარი"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-personal-number">პირადი ნომერი</label>
+											<input
+												type="text"
+												id="order-personal-number"
+												placeholder="ჩაწერეთ პირადი ნომერი"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-address">მისამართი</label>
+											<input
+												type="text"
+												id="order-address"
+												placeholder="ჩაწერეთ მისამართი"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-phone">ტელეფონის ნომერი</label>
+											<input
+												type="tel"
+												id="order-phone"
+												placeholder="ჩაწერეთ ტელეფონის ნომერი"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-date"
+												>როდის გსურთ შეკვეთის მიღება</label
+											>
+											<input type="date" id="order-date" placeholder="" />
+										</div>
+
+										<div class="form-row">
+											<label for="order-email">ელ.ფოსტა</label>
+											<input
+												type="email"
+												id="order-email"
+												placeholder="ჩაწერეთ ელ.ფოსტა"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-comment">კომენტარი</label>
+											<textarea
+												name=""
+												id="order-comment"
+												cols="30"
+												rows="10"
+												placeholder="კომენტარი"
+											></textarea>
+										</div>
+										<div class="form-row">
+											<label for="order-payment-method">გადახდის მეთოდი</label>
+											<select name="" id="order-payment-method">
+												<option value="1">1</option>
+												<option value="2">2</option>
+											</select>
+										</div>
+
+										<button class="form-btn">გაგზავნა</button>
+									</form>
+								</div>
+								<div class="tab" data-tab="iuridical-order"></div>
+							</div>
+						</div>
+					</div>
+					<div class="orders-list">
+						<div class="order-item">
+							<div class="top">
+								<img src="src/img/chair.png" alt="" />
+								<div class="info">
+									<h5 class="title">
+										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
+									</h5>
+									<div class="col">
+										<h6 class="p">რაოდენობა</h6>
+										<p class="v">20 ერთეული</p>
+									</div>
+									<div class="col">
+										<h6 class="p">ერთეულის ფასი</h6>
+										<p class="v price">
+											<span class="bold">1450₾</span>
+											<span class="old-price">1600₾</span>
+										</p>
+									</div>
+									<div class="col">
+										<h6 class="p">ჯამური ფასი</h6>
+										<p class="v bold">29 000₾</p>
+									</div>
+									<div class="col color">
+										<h6 class="p">ფერი</h6>
+										<p class="v">
+											<span style="background-color: black"></span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<div class="content">
+									<h6>კომენტარი</h6>
+									<p>
+										მომხმარებლის მიერ პროდუქტის შერჩევის და ვირტუალურ კალათაში
+										მოთავსების შემდგომ, ახალი მომხმარებლის შემთხვევაში საჭირო
+										იქნება შემდეგი ინფორმაციის მითითება: ელექტრონული ფოსტა,
+										სახელი, მობილურის ნომერი და მისამართი სადაც სურს რომ
+										შენაძენი მიიღოს.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="order-item">
+							<div class="top">
+								<img src="src/img/chair.png" alt="" />
+								<div class="info">
+									<h5 class="title">
+										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
+									</h5>
+									<div class="col">
+										<h6 class="p">რაოდენობა</h6>
+										<p class="v">20 ერთეული</p>
+									</div>
+									<div class="col">
+										<h6 class="p">ერთეულის ფასი</h6>
+										<p class="v price">
+											<span class="bold">1450₾</span>
+											<span class="old-price">1600₾</span>
+										</p>
+									</div>
+									<div class="col">
+										<h6 class="p">ჯამური ფასი</h6>
+										<p class="v bold">29 000₾</p>
+									</div>
+									<div class="col color">
+										<h6 class="p">ფერი</h6>
+										<p class="v">
+											<span style="background-color: black"></span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<div class="content">
+									<h6>კომენტარი</h6>
+									<p>
+										მომხმარებლის მიერ პროდუქტის შერჩევის და ვირტუალურ კალათაში
+										მოთავსების შემდგომ, ახალი მომხმარებლის შემთხვევაში საჭირო
+										იქნება შემდეგი ინფორმაციის მითითება: ელექტრონული ფოსტა,
+										სახელი, მობილურის ნომერი და მისამართი სადაც სურს რომ
+										შენაძენი მიიღოს.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="order-item">
+							<div class="top">
+								<img src="src/img/chair.png" alt="" />
+								<div class="info">
+									<h5 class="title">
+										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
+									</h5>
+									<div class="col">
+										<h6 class="p">რაოდენობა</h6>
+										<p class="v">20 ერთეული</p>
+									</div>
+									<div class="col">
+										<h6 class="p">ერთეულის ფასი</h6>
+										<p class="v price">
+											<span class="bold">1450₾</span>
+											<span class="old-price">1600₾</span>
+										</p>
+									</div>
+									<div class="col">
+										<h6 class="p">ჯამური ფასი</h6>
+										<p class="v bold">29 000₾</p>
+									</div>
+									<div class="col color">
+										<h6 class="p">ფერი</h6>
+										<p class="v">
+											<span style="background-color: black"></span>
+										</p>
+									</div>
+								</div>
+							</div>
+							<div class="comment">
+								<div class="content">
+									<h6>კომენტარი</h6>
+									<p>
+										მომხმარებლის მიერ პროდუქტის შერჩევის და ვირტუალურ კალათაში
+										მოთავსების შემდგომ, ახალი მომხმარებლის შემთხვევაში საჭირო
+										იქნება შემდეგი ინფორმაციის მითითება: ელექტრონული ფოსტა,
+										სახელი, მობილურის ნომერი და მისამართი სადაც სურს რომ
+										შენაძენი მიიღოს.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="footer-top">
+				<div class="container">
+					<div class="footer-top-wrapper">
+						<div class="footer-card footer-logos">
+							<a href="index.html" class="logo"
+								><img src="src/img/icons/logo.svg" alt="officemart"
+							/></a>
+							<p class="rights">ყველა უფლება დაცულია©</p>
+							<div class="footer-lang-bar">
+								<a href="#" class="active">Geo</a>
+								<a href="#">Eng</a>
+							</div>
+							<div class="bank">
+								<img src="src/img/icons/visa.svg" alt="visa card" />
+								<img src="src/img/icons/Mastercard-Logo.svg" alt="Mastercard" />
+							</div>
+						</div>
+						<div class="footer-card footer-nav">
+							<h5>ნავიგაცია</h5>
+							<ul>
+								<li><a href="#">მოგვწერეთ</a></li>
+								<li><a href="sale.html">ფასდაკლებები</a></li>
+								<li><a href="about-us.html">ჩვენ შესახებ</a></li>
+								<li><a href="#">მომსახურების პირობები</a></li>
+								<li><a href="faq.html">ხშირად დასმული შეკითხვები</a></li>
+								<li><a href="brands.html">ბრენდები</a></li>
+								<li><a href="blog.html">ბლოგი</a></li>
+							</ul>
+						</div>
+						<div class="footer-card footer-nav">
+							<h5>TOP კატეგორიები</h5>
+							<ul>
+								<li><a href="category-page.html">საკანცელარიო ნივთები</a></li>
+								<li><a href="category-page.html">ჰიგიენური საშუალებები</a></li>
+								<li>
+									<a href="category-page.html"
+										>კატრიჯი და კომპიუტერული აქსესუარები</a
+									>
+								</li>
+								<li>
+									<a href="category-page.html">საბავშვო საკანცელარიო ნივთები</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-card contact">
+							<h5>კონტაქტი</h5>
+							<ul>
+								<li>
+									<a href="tel:0322 04 05 00">
+										<img src="src/img/icons/call-calling.svg" alt="" />
+										0322 04 05 00
+									</a>
+								</li>
+								<li>
+									<a href="mailto:info@officemart.ge">
+										<img src="src/img/icons/sms-tracking.svg" alt="" />
+										info@officemart.ge
+									</a>
+								</li>
+								<li>
+									<a href="https://maps.google.com/maps?q=თბილისი, ქუჩა N1">
+										<img src="src/img/icons/location.svg" alt="" />
+										თბილისი, ქუჩა N1
+									</a>
+								</li>
+								<li>
+									<a href="https://maps.google.com/maps?q=თბილისი, ქუჩა N1">
+										<img src="src/img/icons/location.svg" alt="" />
+										თბილისი, ქუჩა N1
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-card socials">
+							<h5>სოციალური მედია</h5>
+							<ul>
+								<li>
+									<a href="#" target="_blank">
+										<img src="src/img/icons/facebook.svg" alt="" />
+										Facebook
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<img src="src/img/icons/youtube.svg" alt="" />
+										Youtube
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<img src="src/img/icons/instagram.svg" alt="" />
+										Instagram
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<img src="src/img/icons/tiktok.svg" alt="" />
+										Tiktok
+									</a>
+								</li>
+								<li>
+									<a href="#" target="_blank">
+										<img src="src/img/icons/linkedin.svg" alt="" />
+										Linkedin
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="footer-card messanger">
+							<div>
+								<img src="src/img/icons/messanger.svg" alt="" />
+							</div>
+							<span>მოგვწერეთ</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer-bottom">
+				<div class="container">
+					<p class="made-by">Created by <span>Smartweb</span></p>
+				</div>
+			</div>
+		</footer>
+
+		<section class="sign-modals">
+			<div class="sign modal sign-modal-block">
+				<div class="modal-content">
+					<div class="close-modal">
+						<img src="src/img/icons/x.svg" alt="close modal" />
+					</div>
+					<div class="tab-names">
+						<a href="#" class="active" data-tab-name="sign-in">ავტორიზაცია</a>
+						<a href="#" class="" data-tab-name="sign-up">რეგისტრაცია</a>
+					</div>
+					<div class="tabs">
+						<div class="tab active" data-tab="sign-in">
+							<form action="">
+								<div class="form-row">
+									<label for="sign-in-email">ელ. ფოსტა</label>
+
+									<!-- add class err to input for red border -->
+									<input
+										type="email"
+										id="sign-in-email"
+										name="sign-in-email"
+										placeholder="შეიყვანეთ ელ. ფოსტა"
+										required
+									/>
+								</div>
+								<div class="form-row password">
+									<label for="sign-in-password">პაროლი</label>
+
+									<!-- add class err to input for red border -->
+									<input
+										type="password"
+										id="sign-in-password"
+										name="sign-in-password"
+										placeholder="******"
+										required
+									/>
+									<img src="src/img/icons/eye.svg" alt="" />
+								</div>
+								<a href="#" class="forgot" id="open-forgot-modal"
+									>დაგავიწყდა პაროლი?</a
+								>
+
+								<!-- add active class to show text -->
+								<p class="err-message">ელ.ფოსტა ან პაროლი არასწორია.</p>
+								<button class="form-btn">ავტორიზაცია</button>
+							</form>
+							<span class="line">ან</span>
+							<div class="sign-in-option">
+								<img src="src/img/google.png" alt="" />
+								Google-ით შესვლა
+							</div>
+							<div class="sign-in-option">
+								<img src="src/img/facebook.png" alt="" />
+								Facebook-ით შესვლა
+							</div>
+						</div>
+						<div class="tab" data-tab="sign-up">
+							<div class="steps">
+								<div class="step">1</div>
+								<div class="divider"></div>
+								<div class="step">2</div>
+								<div class="divider"></div>
+								<div class="step">3</div>
+								<div class="divider"></div>
+								<div class="step">4</div>
+							</div>
+							<div class="select-role-block">
+								<form class="select-role" id="select-sign-up-role">
+									<p>აირჩიეთ ხართ ფიზიკური თუ იურიდიული პირი</p>
+									<label for="iuridical-check">
+										<input
+											type="radio"
+											name="sign-up-role"
+											id="iuridical-check"
+											value="iuridical-form"
+										/>
+										იურიდიული პირი
+									</label>
+									<label for="individual-check">
+										<input
+											type="radio"
+											name="sign-up-role"
+											id="individual-check"
+											value="individual-form"
+										/>
+										ფიზიკური პირი
+									</label>
+									<button class="form-btn">გაგრძელება</button>
+								</form>
+								<span class="line">ან</span>
+								<div class="sign-in-option">
+									<img src="src/img/google.png" alt="" />
+									Google-ით შესვლა
+								</div>
+							</div>
+
+							<form
+								action=""
+								id="iuridical-sign-up"
+								data-id="iuridical-form"
+								class="hidden"
+								data-class="sign-up-form"
+							>
+								<div class="form-tab active" data-id="1">
+									<div class="form-row">
+										<label for="sign-up-company-name">კომპანიის სახელი</label>
+										<input
+											type="text"
+											id="sign-up-company-name"
+											name="sign-up-company-name"
+											placeholder="შეიყვანეთ კომპანიის სახელი"
+											required
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-company-tel">ტელეფონი</label>
+										<input
+											type="tel"
+											id="sign-up-company-tel"
+											name="sign-up-company-tel"
+											placeholder="შეიყვანეთ ტელეფონი"
+											required
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-company-tel-2"
+											>ალტერნატიული ტელეფონი</label
+										>
+										<input
+											type="tel"
+											id="sign-up-company-tel-2"
+											name="sign-up-company-tel-2"
+											placeholder="შეიყვანეთ ალტერნატიული ტელეფონი"
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-company-code"
+											>საიდენთიფიკაციო კოდი</label
+										>
+										<input
+											type="number"
+											id="sign-up-company-code"
+											name="sign-up-company-code"
+											placeholder="შეიყვანეთ საიდენთიფიკაციო კოდი"
+											required
+										/>
+									</div>
+								</div>
+								<div class="form-tab" data-id="2">
+									<div class="form-row">
+										<label for="sign-up-company-address"
+											>საქონლის მიღების მისამართი</label
+										>
+										<input
+											type="text"
+											id="sign-up-company-address"
+											name="sign-up-company-address"
+											placeholder="მიუთითეთ მისამართი"
+											required
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-company-address-2"
+											>ალტერნატიული მისამართი (არასავალდებულო)</label
+										>
+										<input
+											type="text"
+											id="sign-up-company-address-2"
+											name="sign-up-company-address-2"
+											placeholder="მიუთითეთ ალტერნატიული მისამართი"
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-company-person-name"
+											>შეკვეთის მიმღების სახელი და გვარი</label
+										>
+										<input
+											type="text"
+											id="sign-up-company-person-name"
+											name="sign-up-company-person-name"
+											placeholder="მიუთითეთ სახელი და გვარი"
+											required
+										/>
+									</div>
+									<div class="form-row order-hours">
+										<span class="label"
+											>საათები როდესაც შეგიძლიათ მიიღოთ შეკვეთა:</span
+										>
+										<span class="standard">
+											<span class="text">სტანდარტულად:</span>
+											<div>
+												<input
+													type="checkbox"
+													name="standard-hours"
+													id="standard-hours"
+												/>
+												<label for="standard-hours" class="hours"
+													>10:00 - 18:00</label
+												>
+											</div>
+										</span>
+										<span class="select-hours">
+											<span class="text">ან მიუთითეთ სასურველი საათები</span>
+											<div class="hour-selects">
+												<select name="hours-from" id="from" class="from small">
+													<option value="" selected disabled>-დან</option>
+													<option value="10">10:00</option>
+													<option value="11">11:00</option>
+													<option value="12">12:00</option>
+													<option value="13">13:00</option>
+													<option value="14">14:00</option>
+												</select>
+												<select name="hours-to" id="to" class="to small">
+													<option value="" selected disabled>-მდე</option>
+													<option value="10">10:00</option>
+													<option value="11">11:00</option>
+													<option value="12">12:00</option>
+													<option value="13">13:00</option>
+													<option value="14">14:00</option>
+												</select>
+											</div>
+										</span>
+									</div>
+								</div>
+								<div class="form-tab" data-id="3">
+									<div class="form-row">
+										<label for="sign-up-company-email">ელ.ფოსტა</label>
+										<input
+											type="email"
+											id="sign-up-company-email"
+											name="sign-up-company-email"
+											placeholder="მიუთითეთ ელ.ფოსტა"
+											required
+										/>
+									</div>
+									<div class="form-row password">
+										<label for="sign-up-company-password">პაროლი</label>
+										<input
+											type="password"
+											id="sign-up-company-password"
+											name="sign-up-company-password"
+											placeholder="*******"
+											required
+										/>
+										<img src="src/img/icons/eye.svg" alt="" />
+									</div>
+									<div class="form-row password">
+										<label for="sign-up-company-repeat-password"
+											>გაიმეორეთ პაროლი</label
+										>
+										<input
+											type="password"
+											id="sign-up-company-repeat-password"
+											name="sign-up-company-repeat-password"
+											placeholder="*******"
+											required
+										/>
+										<img src="src/img/icons/eye.svg" alt="" />
+									</div>
+									<div class="form-row">
+										<label for="sign-up-company-comment"> კომენტარი </label>
+										<textarea
+											name="sign-up-company-comment"
+											id="sign-up-company-comment"
+											placeholder="დაგვიტოვეთ კომენტარი"
+										></textarea>
+									</div>
+								</div>
+								<div class="form-tab sign-up-success" data-id="4">
+									<div class="success">
+										<img src="src/img/icons/check-green.svg" alt="" />
+									</div>
+									<p>თქვენ წარმატებით დარეგისტრირდით</p>
+								</div>
+								<button class="form-btn active" type="button">
+									გაგრძელება
+								</button>
+								<button class="form-btn hidden" type="submit">
+									რეგისტრაცია
+								</button>
+								<button class="form-btn hidden show-sign-in-form" type="button">
+									ავტორიზაცია
+								</button>
+							</form>
+							<form
+								action=""
+								id="individual-sign-up"
+								data-id="individual-form"
+								class="hidden"
+								data-class="sign-up-form"
+							>
+								<div class="form-tab active" data-id="1">
+									<div class="form-row">
+										<label for="sign-up-individual-name"> სახელი</label>
+										<input
+											type="text"
+											id="sign-up-individual-name"
+											name="sign-up-individual-name"
+											placeholder="შეიყვანეთ  სახელი"
+											required
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-individual-lastname"> გვარი</label>
+										<input
+											type="text"
+											id="sign-up-individual-lastname"
+											name="sign-up-individual-lastname"
+											placeholder="შეიყვანეთ  გვარი"
+											required
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-individual-tel">ტელეფონი</label>
+										<input
+											type="tel"
+											id="sign-up-individual-tel"
+											name="sign-up-individual-tel"
+											placeholder="შეიყვანეთ ტელეფონი"
+											required
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-individual-tel-2"
+											>ალტერნატიული ტელეფონი</label
+										>
+										<input
+											type="tel"
+											id="sign-up-individual-tel-2"
+											name="sign-up-individual-tel-2"
+											placeholder="შეიყვანეთ ალტერნატიული ტელეფონი"
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-individual-code">პირადი ნომერი</label>
+										<input
+											type="number"
+											id="sign-up-individual-code"
+											name="sign-up-individual-code"
+											placeholder="შეიყვანეთ პირადი ნომერი"
+											required
+										/>
+									</div>
+								</div>
+								<div class="form-tab" data-id="2">
+									<div class="form-row">
+										<label for="sign-up-individual-address"
+											>საქონლის მიღების მისამართი</label
+										>
+										<input
+											type="text"
+											id="sign-up-individual-address"
+											name="sign-up-individual-address"
+											placeholder="მიუთითეთ მისამართი"
+											required
+										/>
+									</div>
+									<div class="form-row">
+										<label for="sign-up-individual-address-2"
+											>ალტერნატიული მისამართი (არასავალდებულო)</label
+										>
+										<input
+											type="text"
+											id="sign-up-individual-address-2"
+											name="sign-up-individual-address-2"
+											placeholder="მიუთითეთ ალტერნატიული მისამართი"
+										/>
+									</div>
+
+									<div class="form-row order-hours">
+										<span class="label"
+											>საათები როდესაც შეგიძლიათ მიიღოთ შეკვეთა:</span
+										>
+										<span class="standard">
+											<span class="text">სტანდარტულად:</span>
+											<div>
+												<input
+													type="checkbox"
+													name="standard-hours"
+													id="individual-standard-hours"
+												/>
+												<label for="individual-standard-hours" class="hours"
+													>10:00 - 18:00</label
+												>
+											</div>
+										</span>
+										<span class="select-hours">
+											<span class="text">ან მიუთითეთ სასურველი საათები</span>
+											<div class="hour-selects">
+												<select
+													name="individual-hours-from"
+													id="individual-from"
+													class="from small"
+												>
+													<option value="" selected disabled>-დან</option>
+													<option value="10">10:00</option>
+													<option value="11">11:00</option>
+													<option value="12">12:00</option>
+													<option value="13">13:00</option>
+													<option value="14">14:00</option>
+												</select>
+												<select
+													name="individual-hours-to"
+													id="individual-to"
+													class="to small"
+												>
+													<option value="" selected disabled>-მდე</option>
+													<option value="10">10:00</option>
+													<option value="11">11:00</option>
+													<option value="12">12:00</option>
+													<option value="13">13:00</option>
+													<option value="14">14:00</option>
+												</select>
+											</div>
+										</span>
+									</div>
+								</div>
+								<div class="form-tab" data-id="3">
+									<div class="form-row">
+										<label for="sign-up-individual-email">ელ.ფოსტა</label>
+										<input
+											type="email"
+											id="sign-up-individual-email"
+											name="sign-up-individual-email"
+											placeholder="მიუთითეთ ელ.ფოსტა"
+											required
+										/>
+									</div>
+									<div class="form-row password">
+										<label for="sign-up-individual-password">პაროლი</label>
+										<input
+											type="password"
+											id="sign-up-individual-password"
+											name="sign-up-individual-password"
+											placeholder="*******"
+											required
+										/>
+										<img src="src/img/icons/eye.svg" alt="" />
+									</div>
+									<div class="form-row password">
+										<label for="sign-up-individual-repeat-password"
+											>გაიმეორეთ პაროლი</label
+										>
+										<input
+											type="password"
+											id="sign-up-individual-repeat-password"
+											name="sign-up-individual-repeat-password"
+											placeholder="*******"
+											required
+										/>
+										<img src="src/img/icons/eye.svg" alt="" />
+									</div>
+									<div class="form-row">
+										<label for="sign-up-individual-comment"> კომენტარი </label>
+										<textarea
+											name="sign-up-individual-comment"
+											id="sign-up-individual-comment"
+											placeholder="დაგვიტოვეთ კომენტარი"
+										></textarea>
+									</div>
+								</div>
+								<div class="form-tab sign-up-success" data-id="4">
+									<div class="success">
+										<img src="src/img/icons/check-green.svg" alt="" />
+									</div>
+									<p>თქვენ წარმატებით დარეგისტრირდით</p>
+								</div>
+								<button class="form-btn active" type="button">
+									გაგრძელება
+								</button>
+								<button class="form-btn hidden" type="submit">
+									რეგისტრაცია
+								</button>
+								<button class="form-btn hidden show-sign-in-form" type="button">
+									ავტორიზაცია
+								</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="modal forgot-password sign-modal-block">
+				<div class="modal-content">
+					<div class="close-modal">
+						<img src="src/img/icons/x.svg" alt="close modal" />
+					</div>
+					<div class="back-to-sign">
+						<img src="src/img/icons/arr.svg" alt="" />
+						პაროლის აღდგენა
+					</div>
+					<form action="">
+						<div class="form-row">
+							<label for="forgot-password-email"> ელ.ფოსტა </label>
+							<input
+								type="email"
+								placeholder="შეიყვანეთ ელ. ფოსტა"
+								id="forgot-password-email"
+								name="forgot-password-email"
+								required
+							/>
+						</div>
+						<p>მითითებულ მეილზე მიიღებთ პაროლის აღდენის ბმულს</p>
+						<button class="form-btn">გაგზავნა</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- add active class -->
+			<div class="modal sign-modal-block enter-new-password">
+				<div class="modal-content">
+					<div class="close-modal">
+						<img src="src/img/icons/x.svg" alt="close modal" />
+					</div>
+					<div class="back-to-sign">
+						<img src="src/img/icons/arr.svg" alt="" />
+						ახალი პაროლი
+					</div>
+					<form action="">
+						<div class="form-row password">
+							<label for="reset-new-password">ახალი პაროლი</label>
+							<input
+								type="password"
+								placeholder="****"
+								id="reset-new-password"
+								name="reset-new-password"
+								required
+							/>
+							<img src="src/img/icons/eye.svg" alt="" />
+						</div>
+						<div class="form-row password">
+							<label for="repeat-reset-new-password">გაიმეორე პაროლი</label>
+							<input
+								type="password"
+								placeholder="****"
+								id="repeat-reset-new-password"
+								name="repeat-reset-new-password"
+								required
+							/>
+							<p class="err-message">გამეორებული პაროლი არასწორია</p>
+							<img src="src/img/icons/eye.svg" alt="" />
+						</div>
+						<button class="form-btn">გაგზავნა</button>
+					</form>
+				</div>
+			</div>
+
+			<!-- add active class -->
+			<div class="modal sign-modal-block success-message-after-password-change">
+				<div class="modal-content">
+					<div class="close-modal">
+						<img src="src/img/icons/x.svg" alt="close modal" />
+					</div>
+
+					<div class="success">
+						<img src="src/img/icons/check-green.svg" alt="" />
+					</div>
+					<p>პაროლი წარმატებით შეიცვალა</p>
+					<button class="form-btn show-sign-in-form" type="button">
+						ავტორიზაცია
+					</button>
+				</div>
+			</div>
+		</section>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+			integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="src/js/jquery.nice-select.min.js"></script>
+
+		<script src="src/js/swiper-bundle.min.js"></script>
+		<script src="src/js/main.js"></script>
+	</body>
+</html>

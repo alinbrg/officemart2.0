@@ -2928,7 +2928,7 @@ input[type="number"] {
 	position: relative;
 }
 
-.sign .tab-names {
+.sign-modal-block .tab-names {
 	border-radius: 40px;
 	background: #f1f1f1;
 	display: grid;
@@ -2937,7 +2937,7 @@ input[type="number"] {
 	padding: 4px;
 	margin-bottom: 24px;
 }
-.sign .tab-names a {
+.sign-modal-block .tab-names a {
 	padding: 10px;
 	color: var(--text);
 	text-align: center;
@@ -2946,7 +2946,7 @@ input[type="number"] {
 	font-weight: 700;
 	line-height: 128%;
 }
-.sign .tab-names .active {
+.sign-modal-block .tab-names .active {
 	border-radius: 40px;
 	border: 1px solid var(--primary);
 	background: rgba(248, 220, 198, 0.58);
@@ -4377,6 +4377,38 @@ input[type="number"] {
 	font-weight: 400;
 	line-height: 128%;
 }
+.order-page-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 2.1fr;
+	gap: 20px;
+}
+.add-address-form {
+	margin-top: -30px;
+}
+.order-page-aside {
+	position: static;
+	visibility: visible;
+	opacity: 1;
+	z-index: initial;
+}
+.order-page-aside .modal-content {
+	width: 100%;
+
+	border-radius: 10px;
+	background: #fff;
+	box-shadow: 0px 4px 10px 0px rgba(192, 192, 192, 0.3);
+}
+.place-order {
+	margin-bottom: 100px;
+}
+.order-page-aside .nice-select .list {
+	width: 100%;
+}
+.order-page-aside .nice-select {
+	border-radius: 16px;
+	border: 1px solid #e6e6e6;
+	height: 44px;
+}
 @media (max-width: 1200px) {
 	.fav-prod-card {
 		grid-template-areas:
@@ -4419,6 +4451,9 @@ input[type="number"] {
 	.address-card form .save-btn,
 	.address-card form .edit-btn {
 		padding: 6px;
+	}
+	.order-page-wrapper {
+		grid-template-columns: 1fr;
 	}
 	.profile-wrapper {
 		grid-template-columns: 1fr;
