@@ -346,21 +346,23 @@ function signUpFormActions() {
 
 function tabsChange(parent) {
 	const parentEl = document.querySelector(parent);
-	const tabNames = parentEl.querySelectorAll(".tab-names a");
-	const tabs = parentEl.querySelectorAll(".tab");
+	const tabNames = parentEl && parentEl.querySelectorAll(".tab-names a");
 
-	tabNames.forEach((name) => {
-		name.addEventListener("click", (e) => {
-			e.preventDefault();
-			tabs.forEach((el) => el.classList.remove("active"));
-			tabNames.forEach((el) => el.classList.remove("active"));
+	const tabs = parentEl && parentEl.querySelectorAll(".tab");
 
-			name.classList.add("active");
-			document
-				.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
-				.classList.add("active");
+	tabNames &&
+		tabNames.forEach((name) => {
+			name.addEventListener("click", (e) => {
+				e.preventDefault();
+				tabs.forEach((el) => el.classList.remove("active"));
+				tabNames.forEach((el) => el.classList.remove("active"));
+
+				name.classList.add("active");
+				document
+					.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
+					.classList.add("active");
+			});
 		});
-	});
 }
 
 function showPassword() {
@@ -423,15 +425,35 @@ function profilePageActions() {
 
 	const profilePage = document.querySelector(".profile");
 
+	let tabNames = [];
+
 	if (profilePage) {
-		const tabNames = [
-			"favourite-products",
-			"cart",
-			"history",
-			"addresses",
-			"my-info",
-			"security",
-		];
+		switch (profilePage.id) {
+			case "individual-profile":
+				tabNames = [
+					"favourite-products",
+					"cart",
+					"history",
+					"addresses",
+					"my-info",
+					"security",
+				];
+				break;
+			case "iuridical-profile":
+				tabNames = [
+					"favourite-products",
+					"cart",
+					"history",
+					"addresses",
+					"sub-users",
+					"my-info",
+					"security",
+				];
+				break;
+
+			default:
+				break;
+		}
 
 		const pageUrl = window.location.href;
 		const url = window.location.href.split("#")[0];
@@ -506,8 +528,8 @@ function profilePageActions() {
 				});
 
 			x.classList.add("hidden");
-			editBtn?.classList.remove("hidden");
-			saveBtn?.classList.add("hidden");
+			x.closest(".btns")?.querySelector(".edit-btn").classList.remove("hidden");
+			x.closest(".btns")?.querySelector(".save-btn").classList.add("hidden");
 		});
 
 		// edit password

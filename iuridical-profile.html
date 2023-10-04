@@ -80,27 +80,27 @@
 			</div>
 		</header>
 
-		<section class="profile" id="individual-profile">
+		<section class="profile" id="iuridical-profile">
 			<div class="container">
 				<div class="breadcrumbs">
 					<a href="index.html">მთავარი</a>
-					<a href="individual-profile.html" class="active">პროფილი</a>
+					<a href="iuridical-profile.html" class="active">პროფილი</a>
 				</div>
 			</div>
 
 			<div class="profile-container container">
 				<div class="profile-title">
 					<h2>პროფილი</h2>
-					<span>ფიზიკური პირი</span>
+					<span>იურიდიული პირი</span>
 				</div>
 				<div class="profile-wrapper">
 					<div class="profile-tabs">
 						<div class="profile">
 							<img src="src/img/Rectangle 114.png" alt="" />
 							<div class="profile-info">
-								<h5 class="name">დავით კოხრეიძე</h5>
-								<a href="mailto:dato.kokhreidze25@gmail.com"
-									>dato.kokhreidze25@gmail.com</a
+								<h5 class="name">შ.პ.ს ოფისმარტი</h5>
+								<a href="mailto:Info.officemart@gmail.com"
+									>Info.officemart@gmail.com</a
 								>
 								<a href="tel:012345678910">012345678910</a>
 							</div>
@@ -122,6 +122,12 @@
 							<div class="profile-tab-name" data-tab-name="addresses">
 								<img src="src/img/icons/location-black.svg" alt="" />
 								მისამართები
+							</div>
+						</div>
+						<div class="main-tabs">
+							<div class="profile-tab-name" data-tab-name="sub-users">
+								<img src="src/img/icons/subuser.svg" alt="" />
+								ქვემომხმარებლები
 							</div>
 						</div>
 						<div class="control-tabs">
@@ -187,12 +193,24 @@
 							<div class="tab-title">
 								<h3>შეკვეთების ისტორია</h3>
 							</div>
+							<div class="tab-switch">
+								<button class="option active">ჩემი შეკვეთები</button>
+								<button class="option">ჩემი ქვემომხმარებლების შეკვეთები</button>
+							</div>
 							<div class="orders-wrapper">
 								<div class="order-card">
 									<div class="order-title">
 										<h4 class="id">#12345678910</h4>
 										<h4 class="date">25/04/2023</h4>
 										<h4 class="add">თბილისი, ონიაშვილის ქ. N4</h4>
+										<h4 class="price">
+											₾24,348
+											<img src="src/img/icons/info.svg" alt="" />
+											<div class="memo">
+												გთხოვთ გაითვალისწინოთ, აღნიშნული ინფორმაცია არ
+												წარმოადგენს საბუღალტრო ან ფინანსურ ინფორმაციას
+											</div>
+										</h4>
 										<div class="img see-order-info">
 											<img src="src/img/icons/arr.svg" alt="" />
 										</div>
@@ -204,6 +222,14 @@
 										<h4 class="id">#313213132</h4>
 										<h4 class="date">25/04/2023</h4>
 										<h4 class="add">თბილისი, . N4</h4>
+										<h4 class="price">
+											₾24,348
+											<img src="src/img/icons/info.svg" alt="" />
+											<div class="memo">
+												გთხოვთ გაითვალისწინოთ, აღნიშნული ინფორმაცია არ
+												წარმოადგენს საბუღალტრო ან ფინანსურ ინფორმაციას
+											</div>
+										</h4>
 									</div>
 									<div class="order-details">
 										<div class="order-item">
@@ -342,6 +368,14 @@
 										<h4 class="id">#313213132</h4>
 										<h4 class="date">25/04/2023</h4>
 										<h4 class="add">თბილისი, . N4</h4>
+										<h4 class="price">
+											₾24,348
+											<img src="src/img/icons/info.svg" alt="" />
+											<div class="memo">
+												გთხოვთ გაითვალისწინოთ, აღნიშნული ინფორმაცია არ
+												წარმოადგენს საბუღალტრო ან ფინანსურ ინფორმაციას
+											</div>
+										</h4>
 										<div class="img see-order-info">
 											<img src="src/img/icons/arr.svg" alt="" />
 										</div>
@@ -353,6 +387,14 @@
 										<h4 class="id">#313213132</h4>
 										<h4 class="date">25/04/2023</h4>
 										<h4 class="add">თბილისი, . N4</h4>
+										<h4 class="price">
+											₾24,348
+											<img src="src/img/icons/info.svg" alt="" />
+											<div class="memo">
+												გთხოვთ გაითვალისწინოთ, აღნიშნული ინფორმაცია არ
+												წარმოადგენს საბუღალტრო ან ფინანსურ ინფორმაციას
+											</div>
+										</h4>
 									</div>
 									<div class="order-details">
 										<div class="order-item">
@@ -604,6 +646,12 @@
 								</div>
 							</div>
 						</div>
+
+						<div class="profile-tab" data-tab-name="sub-users">
+							<div class="tab-title">
+								<h3>ქვემომხმარებლები</h3>
+							</div>
+						</div>
 						<div class="profile-tab" data-tab-name="my-info">
 							<div class="tab-title">
 								<h3>ჩემი ანგარიში</h3>
@@ -623,29 +671,26 @@
 										</button>
 									</div>
 									<div class="form-row">
-										<label for="name">სახელი</label>
-										<input type="text" value="დავითი" readonly id="name" />
-									</div>
-									<div class="form-row">
-										<label for="lastname">გვარი</label>
+										<label for="name">კომპანიის დასახელება</label>
 										<input
 											type="text"
-											value="კოხრეიძე"
+											value="შ.პ.ს ოფისმარტი"
 											readonly
-											id="lastname"
+											id="name"
 										/>
 									</div>
+
 									<div class="form-row">
 										<label for="email">ელ.ფოსტა</label>
 										<input
 											type="email"
-											value="dato.kokhreidze25@gmail.com"
+											value="info.officmart@gmail.com"
 											readonly
 											id="email"
 										/>
 									</div>
 									<div class="form-row">
-										<label for="personal-number">პირადი ნომერი</label>
+										<label for="personal-number">საიდენთიფიკაციო კოდი</label>
 										<input
 											type="number"
 											value="01005034170"
@@ -670,6 +715,13 @@
 											readonly
 											id="phone2"
 										/>
+									</div>
+									<div class="form-row workhours">
+										<label for="working-hours"> სამუშაო საათები </label>
+										<div class="d-flex">
+											<input type="time" readonly value="10:00" />
+											<input type="time" readonly value="18:00" />
+										</div>
 									</div>
 								</form>
 							</div>
