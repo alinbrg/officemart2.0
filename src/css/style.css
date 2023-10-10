@@ -3178,7 +3178,7 @@ input[type="number"] {
 .divider.active::before {
 	content: "";
 	background-color: #27ae60;
-	width: 39px;
+	width: 70%;
 	height: 3px;
 	position: absolute;
 	left: 0;
@@ -4023,14 +4023,14 @@ input[type="number"] {
 	padding-left: 0;
 }
 
-#iuridical-profile .order-title {
+.orders-with-tabs .order-title {
 	grid-template-columns: 0.8fr 0.8fr 1.8fr 3fr 0.5fr;
 }
 .order-title .price {
 	gap: 4px;
 	position: relative;
 }
-#iuridical-profile .order-card.active .order-title.mobile {
+.orders-with-tabs .order-card.active .order-title.mobile {
 	grid-template-columns: 38px 0.5fr 0.5fr auto 2fr;
 }
 .order-title .price .memo {
@@ -4359,7 +4359,7 @@ input[type="number"] {
 	text-align: left;
 	pointer-events: none;
 	padding-left: 0;
-	margin-bottom: 16px;
+	/* margin-bottom: 16px; */
 }
 
 .city-select {
@@ -4414,9 +4414,6 @@ input[type="number"] {
 	grid-template-columns: 1fr 2.1fr;
 	gap: 20px;
 }
-.add-address-form {
-	margin-top: -30px;
-}
 .order-page-aside {
 	position: static;
 	visibility: visible;
@@ -4458,7 +4455,8 @@ input[type="number"] {
 	color: var(--primary) !important;
 	font-weight: 700;
 }
-.tab-switch .option:first-of-type {
+
+.tab-switch .option:not(:last-of-type) {
 	margin-right: 16px;
 	padding-right: 16px;
 	border-right: 1px solid #e6e6e6;
@@ -4593,6 +4591,41 @@ input[type="number"] {
 	display: block;
 }
 
+.add-subuser-modal .tab-names {
+	grid-template-columns: 1fr;
+	background-color: transparent;
+	margin-bottom: 12px;
+}
+.sign-modal-block.add-subuser-modal .tab-names .active {
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	color: var(--text);
+	text-align: left;
+	font-feature-settings: "case" on;
+	font-family: "Helvetica Neue LT GEO";
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 128%;
+}
+.add-subuser-modal .steps {
+	justify-content: space-between;
+	margin-bottom: 16px;
+}
+.add-subuser-modal .divider {
+	width: 273px;
+}
+
+.add-subuser-modal .divider.active::before {
+	width: 50%;
+}
+.add-subuser-modal .divider.active.full::before {
+	width: 100%;
+}
+.add-subuser-modal .success {
+	margin-top: 80px;
+}
 @media (max-width: 1200px) {
 	.fav-prod-card {
 		grid-template-areas:
@@ -4726,7 +4759,7 @@ input[type="number"] {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: auto auto;
 	}
-	#iuridical-profile .order-title {
+	.orders-with-tabs .order-title {
 		grid-template-columns: 1fr 1fr 1fr 0.5fr;
 		position: relative;
 	}
@@ -4764,7 +4797,8 @@ input[type="number"] {
 		width: 100%;
 		text-align: left;
 	}
-	.tab-switch .option:first-of-type {
+
+	.tab-switch .option:not(:last-of-type) {
 		border: none;
 		border-bottom: 1px solid #e6e6e6;
 	}

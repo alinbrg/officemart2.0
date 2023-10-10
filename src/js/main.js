@@ -44,7 +44,7 @@ function categoryDropDown() {
 	const catWrapper = document.querySelector(".cat-wrapper");
 	const categories = document.querySelector(".categories");
 	if (catSwiper) {
-		allCatBtn.addEventListener("click", (e) => {
+		allCatBtn?.addEventListener("click", (e) => {
 			allCatBtn.classList.toggle("active");
 			catWrapper.classList.toggle("active");
 			categories.classList.toggle("active");
@@ -146,14 +146,14 @@ function blogPageSlider() {
 function accordion() {
 	const accodrions = document.querySelectorAll(".accordion .head");
 	accodrions.forEach((el) => {
-		el.addEventListener("click", (e) => {
+		el?.addEventListener("click", (e) => {
 			el.closest(".accordion").classList.toggle("active");
 		});
 	});
 }
 
 function closeModal(modal) {
-	modal.addEventListener("click", (e) => {
+	modal?.addEventListener("click", (e) => {
 		if (e.target.classList.contains("modal")) modal.classList.remove("active");
 	});
 }
@@ -164,7 +164,7 @@ function copyContactData() {
 	if (modal) {
 		closeModal(modal);
 		copyContent.forEach((el) => {
-			el.addEventListener("click", () => {
+			el?.addEventListener("click", () => {
 				let text = el.closest(".row").querySelector("a.link-b").innerText;
 
 				navigator.clipboard
@@ -194,7 +194,7 @@ function closeSignModals() {
 	);
 	const modals = document.querySelectorAll(".sign-modal-block");
 	closeModalBtns.forEach((btn) => {
-		btn.addEventListener("click", () => {
+		btn?.addEventListener("click", () => {
 			btn.closest(".sign-modal-block ").classList.remove("active");
 
 			if ($("#city").data("select2")) {
@@ -203,7 +203,7 @@ function closeSignModals() {
 		});
 	});
 	modals.forEach((modal) => {
-		modal.addEventListener("click", (e) => {
+		modal?.addEventListener("click", (e) => {
 			if (
 				modal.classList.contains("active") &&
 				e.target.classList.contains("sign-modal-block")
@@ -260,8 +260,8 @@ function selectSignUpRole() {
 	const form = document.querySelector("#select-sign-up-role");
 	const selectRoleBlock = document.querySelector(".select-role-block");
 	const tabNames = document.querySelector(".sign .tab-names");
-	const firstStep = document.querySelector(".step");
-	const firstDivider = document.querySelector(".divider");
+	const firstStep = document.querySelector(".sign .step");
+	const firstDivider = document.querySelector(".sign .divider");
 
 	if (form) {
 		form.addEventListener("submit", (e) => {
@@ -283,8 +283,8 @@ function selectSignUpRole() {
 
 function signUpFormActions() {
 	const forms = document.querySelectorAll('[data-class="sign-up-form"]');
-	const steps = document.querySelectorAll(".step");
-	const dividers = document.querySelectorAll(".divider");
+	const steps = document.querySelectorAll(".sign .step");
+	const dividers = document.querySelectorAll(".sign .divider");
 	const tabNames = document.querySelector(".sign .tab-names");
 	forms.forEach((form) => {
 		const formBtn = form.querySelector(".form-btn.active");
@@ -292,7 +292,7 @@ function signUpFormActions() {
 		const formTabs = form.querySelectorAll(".form-tab");
 		const showSignInForm = form.querySelector(".show-sign-in-form");
 
-		formBtn.addEventListener("click", (e) => {
+		formBtn?.addEventListener("click", (e) => {
 			const activeFormTab = form.querySelector(".form-tab.active");
 			const errors = [];
 			const inputs = activeFormTab.querySelectorAll("input[required]");
@@ -344,15 +344,75 @@ function signUpFormActions() {
 	});
 }
 
+stepsActions(".add-subuser-modal", ".add-subuser-modal form");
+function stepsActions(parent, form) {
+	const parentEl = document.querySelector(parent);
+	const formsEl = document.querySelectorAll(form);
+	const elementsToHide =
+		parentEl &&
+		parentEl.querySelectorAll(
+			".add-subuser-modal .steps, .add-subuser-modal .tab-names"
+		);
+	const steps = parentEl && parentEl.querySelectorAll(".step");
+	const dividers = parentEl && parentEl.querySelectorAll(".divider");
+	formsEl.forEach((form) => {
+		const formBtn = form.querySelector(".form-btn.active");
+		const formBtnHidden = form.querySelector(".form-btn.hidden");
+		const formTabs = form.querySelectorAll(".form-tab");
+
+		formBtn?.addEventListener("click", (e) => {
+			const activeFormTab = form.querySelector(".form-tab.active");
+			const errors = [];
+			const inputs = activeFormTab.querySelectorAll("input[required]");
+
+			inputs.forEach((el) => {
+				if (!el.validity.valid) {
+					el.classList.add("err");
+					errors.push(el.validity.valid);
+				} else {
+					el.classList.remove("err");
+				}
+			});
+
+			if (!errors.includes(false)) {
+				if (+activeFormTab.dataset.id !== 2) {
+					activeFormTab.classList.replace("active", "hidden");
+					formTabs[activeFormTab.dataset.id]?.classList.add("active");
+					steps[activeFormTab.dataset.id - 1]?.classList.add("active");
+					dividers[activeFormTab.dataset.id - 1]?.classList.add("active");
+					dividers[activeFormTab.dataset.id - 1]?.classList.add("full");
+				}
+
+				if (+activeFormTab.dataset.id + 1 === 2) {
+					formBtn.classList.replace("active", "hidden");
+					formBtnHidden.classList.replace("hidden", "active");
+				}
+			}
+		});
+
+		form?.addEventListener("submit", (e) => {
+			e.preventDefault();
+			formBtnHidden.classList.replace("active", "hidden");
+
+			// add ajax and if success
+			if (true) {
+				formTabs[1]?.classList.replace("active", "hidden");
+				formTabs[2]?.classList.add("active");
+				steps[1]?.classList.add("active");
+				elementsToHide.forEach((el) => el.classList.add("hidden"));
+			}
+		});
+	});
+}
+
 function tabsChange(parentEl) {
 	const tabNames = parentEl && parentEl.querySelectorAll(".tab-names a");
 
 	const tabs = parentEl && parentEl.querySelectorAll(".tab");
 
-	console.log(parentEl, tabNames, tabs);
 	tabNames &&
 		tabNames.forEach((name) => {
-			name.addEventListener("click", (e) => {
+			name?.addEventListener("click", (e) => {
 				e.preventDefault();
 				tabs.forEach((el) => el.classList.remove("active"));
 				tabNames.forEach((el) => el.classList.remove("active"));
@@ -369,7 +429,7 @@ function showPassword() {
 	const showPasswordBtns = document.querySelectorAll(".form-row.password img");
 	showPasswordBtns.forEach((btn) => {
 		let typePassword = true;
-		btn.addEventListener("click", (e) => {
+		btn?.addEventListener("click", (e) => {
 			const input = btn.closest(".form-row.password")?.querySelector("input");
 			typePassword = !typePassword;
 			typePassword === false
@@ -430,6 +490,7 @@ function profilePageActions() {
 	if (profilePage) {
 		switch (profilePage.id) {
 			case "individual-profile":
+			case "subuser-profile":
 				tabNames = [
 					"favourite-products",
 					"cart",
@@ -471,7 +532,7 @@ function profilePageActions() {
 		}
 
 		tabBtns.forEach((btn, index) => {
-			btn.addEventListener("click", (e) => {
+			btn?.addEventListener("click", (e) => {
 				removeActiveClasses();
 				btn.classList.add("active");
 				tabs[index]?.classList.add("active");
@@ -490,7 +551,7 @@ function profilePageActions() {
 
 		const seeOrderInfo = document.querySelectorAll(".see-order-info");
 		seeOrderInfo.forEach((btn) => {
-			btn.addEventListener("click", (e) => {
+			btn?.addEventListener("click", (e) => {
 				btn.closest(".order-card").classList.toggle("active");
 			});
 		});
@@ -502,7 +563,7 @@ function profilePageActions() {
 		const x = document.querySelector(".x");
 
 		editBtn.forEach((btn) => {
-			btn.addEventListener("click", (e) => {
+			btn?.addEventListener("click", (e) => {
 				btn
 					.closest("form")
 					.querySelectorAll("input")
@@ -520,7 +581,7 @@ function profilePageActions() {
 			});
 		});
 
-		x.addEventListener("click", () => {
+		x?.addEventListener("click", () => {
 			x.closest("form")
 				.querySelectorAll("input")
 				.forEach((el) => {
@@ -541,11 +602,11 @@ function profilePageActions() {
 		const passwordTabNames = document.querySelectorAll(
 			".password-modal .tab-names a"
 		);
-		editPassword.addEventListener("click", () => {
+		editPassword?.addEventListener("click", () => {
 			passwordModal.classList.add("active");
 		});
 
-		nextPass.addEventListener("click", () => {
+		nextPass?.addEventListener("click", () => {
 			oldPassBlock.classList.add("hidden");
 			newPassBlock.classList.remove("hidden");
 			passwordTabNames.forEach((el) => el.classList.toggle("hidden"));
@@ -572,7 +633,7 @@ function profilePageActions() {
 			});
 		}
 
-		addAddressBtn.addEventListener("click", (e) => {
+		addAddressBtn?.addEventListener("click", (e) => {
 			document.querySelector(".city-block").classList.remove("hidden");
 			document.querySelector(".street-block").classList.add("hidden");
 
@@ -581,7 +642,7 @@ function profilePageActions() {
 			select.select2("open");
 		});
 
-		cityAddBtn.addEventListener("click", () => {
+		cityAddBtn?.addEventListener("click", () => {
 			if (selectedCity.value != 0) {
 				if ($("#city").data("select2")) {
 					$("#city").select2("destroy");
@@ -596,7 +657,7 @@ function profilePageActions() {
 		);
 
 		showSubUserInfoBtns.forEach((btn) => {
-			btn.addEventListener("click", (e) => {
+			btn?.addEventListener("click", (e) => {
 				btn.closest(".subuser-card").classList.toggle("active");
 			});
 		});
@@ -608,15 +669,19 @@ function profilePageActions() {
 		subuserTabs.forEach((card) => {
 			tabsChange(card);
 		});
+
+		const addSubUserBtn = document.querySelector(".add-new-sub-user");
+		const addSubUserModal = document.querySelector(".add-subuser-modal");
+		addSubUserBtn?.addEventListener("click", (e) => {
+			addSubUserModal && addSubUserModal.classList.add("active");
+		});
 	}
 }
 
 openSignModals();
 const parent1 = document.querySelector(".sign");
 const parent2 = document.querySelector(".order-page-aside");
-const parent3 = document.querySelector(
-	"#iuridical-profile .profile-tab[data-tab-name='history']"
-);
+const parent3 = document.querySelector(".orders-with-tabs");
 tabsChange(parent1);
 tabsChange(parent2);
 tabsChange(parent3);
