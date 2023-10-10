@@ -3996,7 +3996,8 @@ input[type="number"] {
 	align-items: center;
 	gap: 16px;
 }
-.order-title h4 {
+.order-title h4,
+.subuser-title h4 {
 	color: var(--text);
 	font-family: "Helvetica Neue LT GEO";
 	font-size: 14px;
@@ -4198,14 +4199,16 @@ input[type="number"] {
 	line-height: 160%;
 }
 
-.profile-form form {
+.profile-form form,
+[data-tab="edit-subuser"] form {
 	border-radius: 8px;
 	border: 1px solid #e2e2e2;
 	padding: 16px;
 	max-width: 517px;
 	position: relative;
 }
-.my-info-block form .btns {
+.my-info-block form .btns,
+[data-tab="edit-subuser"] .btns {
 	position: absolute;
 	right: 16px;
 	top: 16px;
@@ -4264,7 +4267,8 @@ input[type="number"] {
 	line-height: normal;
 	gap: 8px;
 }
-.my-info-block .x {
+.my-info-block .x,
+[data-tab="edit-subuser"] .x {
 	background-color: transparent;
 	margin-left: 16px;
 }
@@ -4451,7 +4455,7 @@ input[type="number"] {
 	background-color: transparent;
 }
 .tab-switch .option.active {
-	color: var(--primary);
+	color: var(--primary) !important;
 	font-weight: 700;
 }
 .tab-switch .option:first-of-type {
@@ -4463,6 +4467,132 @@ input[type="number"] {
 	justify-content: start;
 	gap: 5px;
 }
+.order-title .price:hover .memo {
+	display: block;
+	position: absolute;
+	top: -90px;
+	right: -300px;
+	padding: 16px;
+	border-radius: 8px;
+	border: 1px solid var(--Red, #eb5757);
+	background: #fff;
+	box-shadow: 0px 4px 14px 0px rgba(113, 113, 113, 0.11);
+	width: 300px;
+	z-index: 2;
+}
+#iuridical-profile [data-tab-name="history"] .orders-wrapper {
+	display: none;
+}
+#iuridical-profile [data-tab-name="history"] .orders-wrapper.active {
+	display: block;
+}
+.subuser-title {
+	display: grid;
+	grid-template-columns: 1fr 1.5fr 0.8fr 2fr 42px 28px;
+	border-radius: 8px;
+	background: #fff;
+	padding: 16px;
+	gap: 16px;
+}
+.subuser-title h4:nth-child(1),
+.subuser-title h4:nth-child(2),
+.subuser-title h4:nth-child(3) {
+	padding-right: 5px;
+	border-right: 1px solid #d7d7d7;
+}
+.subuser-title .see-subuser-info {
+	border-right: 1px solid #d7d7d7;
+}
+.subuser-title .see-subuser-info img {
+	transform: rotate(-90deg);
+}
+.subuser-title .dots img,
+.subuser-title .see-subuser-info img {
+	flex-shrink: 0;
+	width: 16px;
+	opacity: 0.7;
+}
+.subuser-title .dots,
+.subuser-title .see-subuser-info {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+}
+
+#iuridical-profile [data-tab-name="sub-users"] .add-new-sub-user {
+	border-radius: 40px;
+	background: var(--primary);
+	color: #fff;
+	font-family: "Helvetica Neue LT GEO";
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	padding: 10px 16px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+#iuridical-profile [data-tab-name="sub-users"] .add-new-sub-user span {
+	font-family: "Helvetica Neue LT GEO";
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 140%;
+	color: #fff;
+	opacity: 1;
+}
+#iuridical-profile [data-tab-name="sub-users"] .add-new-sub-user img {
+	filter: invert(1);
+}
+#iuridical-profile [data-tab-name="sub-users"] .tab-title {
+	align-items: center;
+	justify-content: space-between;
+}
+.subuser-title > * {
+	width: 100% !important;
+}
+.subuser-card {
+	margin-bottom: 4px;
+}
+
+.subuser-card.active .subuser-title {
+	display: none;
+}
+.subuser-card.active .subuser-title-mobile h4.name,
+.subuser-card.active .subuser-title-mobile .see-subuser-info {
+	border-radius: 8px;
+	background: #fff;
+	padding: 16px;
+	border: none;
+}
+.subuser-card.active .subuser-title-mobile .see-subuser-info img {
+	transform: rotate(90deg);
+}
+.subuser-card .subuser-title-mobile {
+	display: none;
+}
+.subuser-card.active .subuser-title-mobile {
+	display: grid;
+	grid-template-columns: 52px auto;
+	background-color: transparent;
+	gap: 8px;
+	padding: 0;
+	margin-bottom: 15px;
+}
+
+.subusers-wrapper:has(.subuser-card.active) .subuser-card:not(.active) {
+	display: none;
+}
+.subuser-card .subuser-details {
+	display: none;
+}
+.subuser-card.active .subuser-details {
+	display: block;
+}
+
 @media (max-width: 1200px) {
 	.fav-prod-card {
 		grid-template-areas:
@@ -4506,6 +4636,66 @@ input[type="number"] {
 	.address-card form .edit-btn {
 		padding: 6px;
 	}
+	.subuser-title {
+		grid-template-columns: 3fr 0.7fr 0.2fr;
+		grid-template-areas:
+			"name dots see-more"
+			"address dots see-more"
+			"tel dots see-more"
+			"email dots see-more";
+		gap: 0;
+		padding: 0 16px;
+	}
+	.subuser-title h4 {
+		border: none !important;
+		padding: 14px 0;
+		border-bottom: 1px solid #eee !important;
+		border-right: 1px solid #eee !important;
+	}
+	.subuser-card.active .subuser-title-mobile {
+		grid-template-areas: "see-more name";
+	}
+	.profile-form[data-tab="edit-subuser"] .btns {
+		position: static;
+		justify-content: end;
+		margin-bottom: 16px;
+	}
+	.profile-form[data-tab="edit-subuser"] form {
+		border: none;
+		margin-top: 0;
+		padding: 0;
+	}
+	.subuser-title .name {
+		grid-area: name;
+	}
+	.subuser-title .add {
+		grid-area: address;
+	}
+	.subuser-title .tel {
+		grid-area: tel;
+	}
+	.subuser-title .email {
+		grid-area: email;
+		border-bottom: none !important;
+	}
+	.subuser-title .dots {
+		grid-area: dots;
+	}
+	.subuser-title .see-subuser-info {
+		grid-area: see-more;
+		border: none;
+	}
+
+	#iuridical-profile [data-tab-name="sub-users"] .add-new-sub-user span {
+		display: none;
+	}
+	.order-title .price:hover .memo {
+		top: 0;
+		right: unset;
+		left: 0;
+		max-width: 90%;
+		width: fit-content;
+	}
 	.order-page-wrapper {
 		grid-template-columns: 1fr;
 	}
@@ -4538,6 +4728,7 @@ input[type="number"] {
 	}
 	#iuridical-profile .order-title {
 		grid-template-columns: 1fr 1fr 1fr 0.5fr;
+		position: relative;
 	}
 	.order-title h4.add {
 		order: 2;
@@ -4550,6 +4741,7 @@ input[type="number"] {
 		border-right: 1px solid #eee;
 	}
 	.order-title .price {
+		position: static;
 		padding-left: 0 !important;
 		border: none !important;
 	}
@@ -4564,6 +4756,7 @@ input[type="number"] {
 		padding-right: 0;
 	}
 	.tab-switch {
+		display: flex;
 		flex-direction: column;
 	}
 	.tab-switch .option {

@@ -344,12 +344,12 @@ function signUpFormActions() {
 	});
 }
 
-function tabsChange(parent) {
-	const parentEl = document.querySelector(parent);
+function tabsChange(parentEl) {
 	const tabNames = parentEl && parentEl.querySelectorAll(".tab-names a");
 
 	const tabs = parentEl && parentEl.querySelectorAll(".tab");
 
+	console.log(parentEl, tabNames, tabs);
 	tabNames &&
 		tabNames.forEach((name) => {
 			name.addEventListener("click", (e) => {
@@ -358,7 +358,7 @@ function tabsChange(parent) {
 				tabNames.forEach((el) => el.classList.remove("active"));
 
 				name.classList.add("active");
-				document
+				parentEl
 					.querySelector(`.tab[data-tab=${name.dataset.tabName}]`)
 					.classList.add("active");
 			});
@@ -589,12 +589,38 @@ function profilePageActions() {
 				addressModalBlocks.forEach((el) => el.classList.toggle("hidden"));
 			}
 		});
+
+		// subuser tab
+		const showSubUserInfoBtns = document.querySelectorAll(
+			".subuser-title .see-subuser-info"
+		);
+
+		showSubUserInfoBtns.forEach((btn) => {
+			btn.addEventListener("click", (e) => {
+				btn.closest(".subuser-card").classList.toggle("active");
+			});
+		});
+
+		const subuserTabs = document.querySelectorAll(
+			"#iuridical-profile .profile-tab[data-tab-name='sub-users'] .subuser-card"
+		);
+
+		subuserTabs.forEach((card) => {
+			tabsChange(card);
+		});
 	}
 }
 
 openSignModals();
-tabsChange(".sign");
-tabsChange(".order-page-aside");
+const parent1 = document.querySelector(".sign");
+const parent2 = document.querySelector(".order-page-aside");
+const parent3 = document.querySelector(
+	"#iuridical-profile .profile-tab[data-tab-name='history']"
+);
+tabsChange(parent1);
+tabsChange(parent2);
+tabsChange(parent3);
+
 coffeeSwiperSlider();
 catSwiperSlider();
 categoryDropDown();
