@@ -87,7 +87,7 @@
 				</div>
 			</div>
 
-			<div class="container">
+			<div class="container order-pg-wrapper">
 				<div class="order-page-wrapper">
 					<div class="order-page-aside sign-modal-block">
 						<div class="modal-content">
@@ -171,6 +171,7 @@
 										<div class="form-row">
 											<label for="order-payment-method">გადახდის მეთოდი</label>
 											<select name="" id="order-payment-method">
+												<option value="" disabled selected>მიუთითეთ</option>
 												<option value="1">1</option>
 												<option value="2">2</option>
 											</select>
@@ -179,7 +180,86 @@
 										<button class="form-btn">გაგზავნა</button>
 									</form>
 								</div>
-								<div class="tab" data-tab="iuridical-order"></div>
+								<div class="tab" data-tab="iuridical-order">
+									<form action="">
+										<div class="form-row">
+											<label for="order-company-name">კომპანიის სახელი</label>
+											<input
+												type="text"
+												placeholder="ჩაწერეთ კომპანიის სახელი"
+												id="order-company-name"
+											/>
+										</div>
+
+										<div class="form-row">
+											<label for="order-company-number"
+												>საიდენთიფიკაციო კოდი</label
+											>
+											<input
+												type="text"
+												id="order-company-number"
+												placeholder="ჩაწერეთ საიდენთიფიკაციო კოდი"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-company-address">მისამართი</label>
+											<input
+												type="text"
+												id="order-company-address"
+												placeholder="ჩაწერეთ მისამართი"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-company-phone">ტელეფონის ნომერი</label>
+											<input
+												type="tel"
+												id="order-company-phone"
+												placeholder="ჩაწერეთ ტელეფონის ნომერი"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-company-date"
+												>როდის გსურთ შეკვეთის მიღება</label
+											>
+											<input
+												type="date"
+												id="order-company-date"
+												placeholder=""
+											/>
+										</div>
+
+										<div class="form-row">
+											<label for="order-company-email">ელ.ფოსტა</label>
+											<input
+												type="email"
+												id="order-company-email"
+												placeholder="ჩაწერეთ ელ.ფოსტა"
+											/>
+										</div>
+										<div class="form-row">
+											<label for="order-company-comment">კომენტარი</label>
+											<textarea
+												name=""
+												id="order-company-comment"
+												cols="30"
+												rows="10"
+												placeholder="კომენტარი"
+											></textarea>
+										</div>
+										<div class="form-row">
+											<label for="order-company-payment-method"
+												>გადახდის მეთოდი</label
+											>
+											<select name="" id="order-company-payment-method">
+												<option value="" disabled selected>მიუთითეთ</option>
+												<option value="1">1</option>
+												<option value="2">2</option>
+											</select>
+										</div>
+
+										<button class="form-btn">გაგზავნა</button>
+									</form>
+								</div>
 							</div>
 						</div>
 					</div>

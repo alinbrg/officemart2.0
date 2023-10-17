@@ -785,7 +785,7 @@ header {
 
 	.categories + section,
 	.categories + footer {
-		margin-top: 80px;
+		margin-top: 90px;
 	}
 	.categories.inner-page + section,
 	.categories.inner-page + footer {
@@ -4438,6 +4438,14 @@ input[type="number"] {
 	border: 1px solid #e6e6e6;
 	height: 44px;
 }
+.order-page-aside .nice-select .current {
+	color: rgba(64, 64, 64, 0.5);
+	font-family: "Helvetica Neue LT GEO";
+	font-size: 13px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 128%;
+}
 .tab-switch {
 	padding-bottom: 7px;
 	border-bottom: 1px solid #e6e6e6;
@@ -4738,6 +4746,12 @@ input[type="number"] {
 @media (max-width: 1024px) {
 	.subcategory-cards-list {
 		gap: 9px;
+	}
+	.order-pg-wrapper {
+		padding: 0;
+	}
+	.orders-list {
+		padding: 0 16px;
 	}
 	.subcategories-list .mobile {
 		display: flex;
