@@ -148,6 +148,10 @@
 
 		<section class="category-page">
 			<div class="container">
+				<div class="breadcrumbs">
+					<a href="index.html">მთავარი</a>
+					<a href="category-page.html" class="active">ჰიგიენური საშუალებები</a>
+				</div>
 				<div class="cat-page-wrapper">
 					<div class="filters">
 						<div class="category-card">
@@ -156,8 +160,8 @@
 						</div>
 
 						<!-- active -->
-						<div class="cat-tags active">
-							<span class="flag sale">-25%</span>
+						<div class="cat-tags">
+							<span class="flag sale">-%</span>
 							<span class="flag new">ახალი</span>
 							<span class="flag wholesale">საბითუმო</span>
 						</div>
@@ -169,37 +173,110 @@
 									<input type="number" name="to" placeholder="მდე" />
 								</div>
 								<div class="row">
-									<select
-										name="brands"
-										id="brands"
-										class="brands wide nice-select"
-									>
-										<option value="" selected disabled>ბრენდები</option>
-										<option value="">ბრენდები</option>
-										<option value="">ბრენდები</option>
-									</select>
+									<div class="brands-filter cat-page-cubcat">
+										<div class="mobile">
+											<h5>ბრენდები</h5>
+											<img
+												class="show-all"
+												src="src/img/icons/plus.svg"
+												alt=""
+											/>
+											<img
+												class="hide-all"
+												src="src/img/icons/minus.svg"
+												alt=""
+											/>
+										</div>
+										<div class="checkboxes desktop">
+											<div class="customSearchbox">
+												<img src="src/img/icons/search-normal.svg" alt="" />
+
+												<input
+													type="search"
+													placeholder="მოძებნე ბრენდები"
+													name="brand-search-q"
+													class="custom-search-input"
+												/>
+											</div>
+
+											<div class="search-results-wrapper">
+												<label for="Sheaffer" class="checkbox search-item">
+													<input type="checkbox" name="" id="Sheaffer" />
+													<span class="check"></span>
+													<span class="s-t">Sheaffer</span>
+												</label>
+												<label for="Cerva" class="checkbox search-item">
+													<input type="checkbox" name="" id="Cerva" />
+													<span class="check"></span>
+													<span class="s-t">Cerva</span>
+												</label>
+												<label for="Carandache" class="checkbox search-item">
+													<input type="checkbox" name="" id="Carandache" />
+													<span class="check"></span>
+													<span class="s-t">Carandache</span>
+												</label>
+											</div>
+										</div>
+									</div>
 								</div>
 								<div class="checkboxes">
-									<label for="1" class="checkbox">
-										<input type="checkbox" name="" id="1" />
+									<label for="available" class="checkbox">
+										<input type="checkbox" checked name="" id="available" />
 										<span class="check"></span>
-										<span>დასანამი ბოთლები</span>
+										<span>მაჩვენე მხოლოდ ხელმისაწვდომი</span>
 									</label>
-									<label for="2" class="checkbox">
-										<input type="checkbox" name="" id="2" />
-										<span class="check"></span>
-										<span>დასანამი ბოთლები</span>
-									</label>
-									<label for="3" class="checkbox">
-										<input type="checkbox" name="" id="3" />
-										<span class="check"></span>
-										<span>დასანამი ბოთლები</span>
-									</label>
+								</div>
+								<div class="category-page-subcategories cat-page-cubcat">
+									<div class="mobile">
+										<h5>ქვეკატეგორიები</h5>
+										<img class="show-all" src="src/img/icons/plus.svg" alt="" />
+										<img
+											class="hide-all"
+											src="src/img/icons/minus.svg"
+											alt=""
+										/>
+									</div>
+									<div class="checkboxes desktop">
+										<div class="customSearchbox">
+											<img src="src/img/icons/search-normal.svg" alt="" />
+
+											<input
+												type="search"
+												placeholder="მოძებნე ქვეკატეგორია"
+												name="subcategory-search-q"
+												class="custom-search-input"
+											/>
+										</div>
+
+										<div class="search-results-wrapper">
+											<label for="1" class="checkbox search-item">
+												<input type="checkbox" name="" id="1" />
+												<span class="check"></span>
+												<span class="s-t">დასანამი ბოთლები</span>
+											</label>
+											<label for="2" class="checkbox search-item">
+												<input type="checkbox" name="" id="2" />
+												<span class="check"></span>
+												<span class="s-t">დასანამი ბოთლები</span>
+											</label>
+											<label for="3" class="checkbox search-item">
+												<input type="checkbox" name="" id="3" />
+												<span class="check"></span>
+												<span class="s-t">დასანამი ბოთლები</span>
+											</label>
+										</div>
+									</div>
 								</div>
 							</div>
 						</form>
 					</div>
 					<div class="product-page-wrapper">
+						<div class="order-by-price">
+							<select name="order-by-price" id="">
+								<option value="">ფასი: ზრდადი</option>
+								<option value="">ფასი: კლებადი</option>
+							</select>
+						</div>
 						<div class="prod-list">
 							<div class="prod-card">
 								<div class="prod-img">
@@ -218,13 +295,13 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -257,11 +334,11 @@
 									<div class="prod-actions">
 										<div class="flag sale">-30%</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -294,11 +371,11 @@
 									<div class="prod-actions">
 										<div class="flag sale">-50%</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -331,11 +408,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -368,11 +445,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -405,11 +482,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -442,11 +519,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -479,11 +556,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -516,11 +593,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -553,11 +630,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -590,11 +667,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -627,11 +704,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -664,11 +741,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -701,11 +778,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -738,11 +815,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>
@@ -775,11 +852,11 @@
 									<div class="prod-actions">
 										<div class="flag new">ახალი</div>
 										<div class="prod-q">
-											<button class="incr">
+											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
 											</button>
 											<span>12</span>
-											<button class="decr">
+											<button class="incr">
 												<img src="src/img/icons/plus.svg" alt="" />
 											</button>
 										</div>

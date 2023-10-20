@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Brand Name</title>
+		<title>Wholesale</title>
 		<link rel="shortcut icon" href="src/img/icons/icon.svg" type="image/svg" />
 		<link rel="stylesheet" href="src/css/fonts.css" />
 		<link rel="stylesheet" href="src/css/swiper-bundle.min.css" />
@@ -79,7 +79,14 @@
 			</div>
 		</header>
 
-		<section class="categories">
+		<div class="container">
+			<div class="breadcrumbs">
+				<a href="index.html">მთავარი</a>
+				<a href="sale.html" class="active">ფასდაკლებული პროდუქცია</a>
+			</div>
+		</div>
+
+		<section class="categories inner-page">
 			<div class="container">
 				<div class="cat-wrapper">
 					<div class="all-cat cat-card">
@@ -146,34 +153,69 @@
 			</div>
 		</section>
 
-		<section class="category-page">
+		<section class="new-products products-page">
 			<div class="container">
+				<div class="prod-page-title-top">
+					<div class="prod-page-title">
+						<h2 class="title">საბითუმო პროდუქცია</h2>
+						<span class="flag wholesale">საბითუმო</span>
+					</div>
+				</div>
 				<div class="cat-page-wrapper">
 					<div class="filters">
-						<div class="category-card brand">
-							<a href="brands.html">
-								<img src="src/img/icons/arr-orange.svg" alt="" />
-							</a>
-							<div>
-								<img class="img" src="src/img/logo2.png" alt="" />
-								<h3 class="title">brand name</h3>
-							</div>
-						</div>
-
-						<!-- active class-->
-						<div class="cat-tags">
-							<span class="flag sale">-25%</span>
-							<span class="flag new">ახალი</span>
-							<span class="flag wholesale">საბითუმო</span>
-						</div>
-
 						<form action="#">
 							<div class="prod-page-filter">
 								<div class="row inputs">
 									<input type="number" name="from" placeholder="ფასი - დან" />
 									<input type="number" name="to" placeholder="მდე" />
 								</div>
+								<div class="row">
+									<div class="brands-filter cat-page-cubcat">
+										<div class="mobile">
+											<h5>ბრენდები</h5>
+											<img
+												class="show-all"
+												src="src/img/icons/plus.svg"
+												alt=""
+											/>
+											<img
+												class="hide-all"
+												src="src/img/icons/minus.svg"
+												alt=""
+											/>
+										</div>
+										<div class="checkboxes desktop">
+											<div class="customSearchbox">
+												<img src="src/img/icons/search-normal.svg" alt="" />
 
+												<input
+													type="search"
+													placeholder="მოძებნე ბრენდები"
+													name="brand-search-q"
+													class="custom-search-input"
+												/>
+											</div>
+
+											<div class="search-results-wrapper">
+												<label for="Sheaffer" class="checkbox search-item">
+													<input type="checkbox" name="" id="Sheaffer" />
+													<span class="check"></span>
+													<span class="s-t">Sheaffer</span>
+												</label>
+												<label for="Cerva" class="checkbox search-item">
+													<input type="checkbox" name="" id="Cerva" />
+													<span class="check"></span>
+													<span class="s-t">Cerva</span>
+												</label>
+												<label for="Carandache" class="checkbox search-item">
+													<input type="checkbox" name="" id="Carandache" />
+													<span class="check"></span>
+													<span class="s-t">Carandache</span>
+												</label>
+											</div>
+										</div>
+									</div>
+								</div>
 								<div class="checkboxes">
 									<label for="available" class="checkbox">
 										<input type="checkbox" name="available" id="available" />
@@ -181,56 +223,17 @@
 										<span>მაჩვენე მხოლოდ ხელმისაწვდომი</span>
 									</label>
 								</div>
-
-								<div class="category-page-subcategories cat-page-cubcat">
-									<div class="mobile">
-										<h5>ქვეკატეგორიები</h5>
-										<img class="show-all" src="src/img/icons/plus.svg" alt="" />
-										<img
-											class="hide-all"
-											src="src/img/icons/minus.svg"
-											alt=""
-										/>
-									</div>
-									<div class="checkboxes desktop">
-										<div class="customSearchbox">
-											<img src="src/img/icons/search-normal.svg" alt="" />
-
-											<input
-												type="search"
-												placeholder="მოძებნე ქვეკატეგორია"
-												name="subcategory-search-q"
-												class="custom-search-input"
-											/>
-										</div>
-
-										<div class="search-results-wrapper">
-											<label for="1" class="checkbox search-item">
-												<input type="checkbox" name="" id="1" />
-												<span class="check"></span>
-												<span class="s-t">დასანამი ბოთლები</span>
-											</label>
-											<label for="2" class="checkbox search-item">
-												<input type="checkbox" name="" id="2" />
-												<span class="check"></span>
-												<span class="s-t">დასანამი ბოთლები</span>
-											</label>
-											<label for="3" class="checkbox search-item">
-												<input type="checkbox" name="" id="3" />
-												<span class="check"></span>
-												<span class="s-t">დასანამი ბოთლები</span>
-											</label>
-										</div>
-									</div>
-								</div>
 							</div>
 						</form>
 					</div>
 					<div class="product-page-wrapper">
-						<div class="banner">
-							<img src="src/img/coffee.png" alt="" />
+						<div class="order-by-price">
+							<select name="order-by-price" id="">
+								<option value="">ფასი: ზრდადი</option>
+								<option value="">ფასი: კლებადი</option>
+							</select>
 						</div>
-						<div class="prod-list">
+						<div class="prod-list sale-page-prod-list">
 							<div class="prod-card">
 								<div class="prod-img">
 									<img class="img" src="src/img/chair.png" alt="" />
@@ -248,7 +251,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -285,7 +288,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag sale">-30%</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -322,7 +325,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag sale">-50%</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -359,7 +362,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -396,7 +399,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -433,7 +436,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -470,7 +473,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -507,7 +510,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -544,7 +547,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -581,7 +584,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -618,7 +621,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -655,155 +658,7 @@
 										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
 									</h6>
 									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
-										<div class="prod-q">
-											<button class="decr">
-												<img src="src/img/icons/minus.svg" alt="" />
-											</button>
-											<span>12</span>
-											<button class="incr">
-												<img src="src/img/icons/plus.svg" alt="" />
-											</button>
-										</div>
-										<div class="prod-price">
-											<span class="new-price">15₾</span>
-											<span class="old-price">150₾</span>
-										</div>
-										<div class="add-to-cart">
-											<img src="src/img/icons/bag.svg" alt="" />
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="prod-card">
-								<div class="prod-img">
-									<img class="img" src="src/img/chair.png" alt="" />
-									<div class="add-to-fav">
-										<img
-											class="add-to-fav-img"
-											src="src/img/icons/heart.svg"
-											alt=""
-										/>
-									</div>
-								</div>
-								<div class="prod-details">
-									<span class="prod-code">#cap51-1203</span>
-									<h6 class="prod-name">
-										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
-									</h6>
-									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
-										<div class="prod-q">
-											<button class="decr">
-												<img src="src/img/icons/minus.svg" alt="" />
-											</button>
-											<span>12</span>
-											<button class="incr">
-												<img src="src/img/icons/plus.svg" alt="" />
-											</button>
-										</div>
-										<div class="prod-price">
-											<span class="new-price">150₾</span>
-											<span class="old-price">180₾</span>
-										</div>
-										<div class="add-to-cart">
-											<img src="src/img/icons/bag.svg" alt="" />
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="prod-card">
-								<div class="prod-img">
-									<img class="img" src="src/img/product.png" alt="" />
-									<div class="add-to-fav">
-										<img
-											class="add-to-fav-img"
-											src="src/img/icons/heart.svg"
-											alt=""
-										/>
-									</div>
-								</div>
-								<div class="prod-details">
-									<span class="prod-code">#cap51-1203</span>
-									<h6 class="prod-name">
-										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
-									</h6>
-									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
-										<div class="prod-q">
-											<button class="decr">
-												<img src="src/img/icons/minus.svg" alt="" />
-											</button>
-											<span>12</span>
-											<button class="incr">
-												<img src="src/img/icons/plus.svg" alt="" />
-											</button>
-										</div>
-										<div class="prod-price">
-											<span class="new-price">15₾</span>
-											<span class="old-price">150₾</span>
-										</div>
-										<div class="add-to-cart">
-											<img src="src/img/icons/bag.svg" alt="" />
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="prod-card">
-								<div class="prod-img">
-									<img class="img" src="src/img/chair.png" alt="" />
-									<div class="add-to-fav">
-										<img
-											class="add-to-fav-img"
-											src="src/img/icons/heart.svg"
-											alt=""
-										/>
-									</div>
-								</div>
-								<div class="prod-details">
-									<span class="prod-code">#cap51-1203</span>
-									<h6 class="prod-name">
-										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
-									</h6>
-									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
-										<div class="prod-q">
-											<button class="decr">
-												<img src="src/img/icons/minus.svg" alt="" />
-											</button>
-											<span>12</span>
-											<button class="incr">
-												<img src="src/img/icons/plus.svg" alt="" />
-											</button>
-										</div>
-										<div class="prod-price">
-											<span class="new-price">150₾</span>
-											<span class="old-price">180₾</span>
-										</div>
-										<div class="add-to-cart">
-											<img src="src/img/icons/bag.svg" alt="" />
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="prod-card">
-								<div class="prod-img">
-									<img class="img" src="src/img/product.png" alt="" />
-									<div class="add-to-fav">
-										<img
-											class="add-to-fav-img"
-											src="src/img/icons/heart.svg"
-											alt=""
-										/>
-									</div>
-								</div>
-								<div class="prod-details">
-									<span class="prod-code">#cap51-1203</span>
-									<h6 class="prod-name">
-										ყავა MEAMA კაფსულა 51მმ N03 (12 ცალიანი კოლოფი)
-									</h6>
-									<div class="prod-actions">
-										<div class="flag new">ახალი</div>
+										<div class="flag wholesale">საბითუმო</div>
 										<div class="prod-q">
 											<button class="decr">
 												<img src="src/img/icons/minus.svg" alt="" />
@@ -824,6 +679,7 @@
 								</div>
 							</div>
 						</div>
+
 						<div class="pgn-wrapper">
 							<ul>
 								<li>
@@ -1545,7 +1401,6 @@
 			referrerpolicy="no-referrer"
 		></script>
 		<script src="src/js/jquery.nice-select.min.js"></script>
-
 		<script src="src/js/swiper-bundle.min.js"></script>
 		<script src="src/js/main.js"></script>
 	</body>

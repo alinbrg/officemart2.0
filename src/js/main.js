@@ -678,6 +678,92 @@ function profilePageActions() {
 	}
 }
 
+function subCategoryPage() {
+	const showAll = document.querySelector(
+		".subcategories-list .mobile img.show-all"
+	);
+	const hideAll = document.querySelector(
+		".subcategories-list .mobile img.hide-all"
+	);
+	showAll &&
+		showAll.addEventListener("click", (e) => {
+			showAll.closest(".subcategories-list").classList.toggle("active");
+		});
+	hideAll &&
+		hideAll.addEventListener("click", (e) => {
+			hideAll.closest(".subcategories-list").classList.toggle("active");
+		});
+}
+
+function showAllCategoriesOnMobile(parent) {
+	if (parent) {
+		const showAll = parent.querySelector(".mobile img.show-all");
+		const hideAll = parent.querySelector(".mobile img.hide-all");
+		showAll &&
+			showAll.addEventListener("click", (e) => {
+				parent.classList.toggle("active");
+			});
+		hideAll &&
+			hideAll.addEventListener("click", (e) => {
+				parent.classList.toggle("active");
+			});
+	}
+}
+
+function prodQ() {
+	const plusBtns = document.querySelectorAll(".prod-q .incr");
+	const minusBtns = document.querySelectorAll(".prod-q .decr");
+
+	plusBtns.forEach((btn) => {
+		btn &&
+			btn.addEventListener("click", (e) => {
+				const q = btn.closest(".prod-q").querySelector("span");
+				const qNumber = btn.closest(".prod-q").querySelector("span").innerText;
+				q.innerText = +qNumber + 1;
+			});
+	});
+	minusBtns.forEach((btn) => {
+		btn &&
+			btn.addEventListener("click", (e) => {
+				const q = btn.closest(".prod-q").querySelector("span");
+				const qNumber = btn.closest(".prod-q").querySelector("span").innerText;
+				q.innerText = +qNumber > 1 ? +qNumber - 1 : +qNumber;
+			});
+	});
+}
+
+function customSearch(searchInput) {
+	const searchBar = document.querySelector(searchInput);
+
+	searchBar &&
+		searchBar.addEventListener("keyup", (e) => {
+			const searchString = e.target.value.toUpperCase();
+
+			let li = [
+				...searchBar.closest(".desktop").querySelectorAll(".search-item"),
+			];
+
+			for (let i = 0; i < li.length; i++) {
+				let a = li[i].querySelectorAll(".s-t")[0];
+				let txtValue = a.textContent || a.innerText;
+				if (txtValue.toUpperCase().indexOf(searchString) > -1) {
+					li[i].style.display = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
+		});
+}
+customSearch('[name="subcategory-page-search-q"]');
+customSearch('[name="brand-search-q"]');
+
+prodQ();
+showAllCategoriesOnMobile(document.querySelector(".subcategories-list"));
+showAllCategoriesOnMobile(
+	document.querySelector(".category-page-subcategories")
+);
+showAllCategoriesOnMobile(document.querySelector(".brands-filter"));
+
 openSignModals();
 const parent1 = document.querySelector(".sign");
 const parent2 = document.querySelector(".order-page-aside");
